@@ -1,0 +1,28 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Connect to DWMP",
+                "description": "Enter the URL and password for your Dude, Where's My Package? instance.",
+                "data": {
+                    "url": "URL",
+                    "password": "Password"
+                }
+            },
+            "reauth_confirm": {
+                "title": "Re-authenticate",
+                "description": "Your session has expired. Please enter your password again.",
+                "data": {
+                    "password": "Password"
+                }
+            }
+        },
+        "error": {
+            "cannot_connect": "Cannot connect to DWMP instance",
+            "invalid_auth": "Invalid password"
+        },
+        "abort": {
+            "already_configured": "This DWMP instance is already configured"
+        }
+    }
+}

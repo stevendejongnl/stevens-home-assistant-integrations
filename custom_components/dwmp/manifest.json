@@ -1,0 +1,12 @@
+{
+    "domain": "dwmp",
+    "name": "Dude, Where's My Package?",
+    "codeowners": ["@stevendejongnl"],
+    "config_flow": true,
+    "dependencies": [],
+    "documentation": "https://github.com/stevendejongnl/stevens-home-assistant-integrations",
+    "integration_type": "service",
+    "iot_class": "cloud_polling",
+    "requirements": [],
+    "version": "1.0.0"
+}
