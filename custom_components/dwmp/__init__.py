@@ -6,7 +6,6 @@ from dataclasses import dataclass, field
 from datetime import timedelta
 import logging
 
-from homeassistant.components.frontend import add_extra_js_url
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
@@ -109,14 +108,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     hass.data.setdefault(DOMAIN, {})
     hass.data[DOMAIN][entry.entry_id] = coordinator
-
-    # Serve and auto-register the Lovelace card JS
-    if f"{DOMAIN}_card_registered" not in hass.data:
-        card_url = f"/{DOMAIN}/dwmp-tracking-card.js"
-        card_path = Path(__file__).parent / "www" / "dwmp-tracking-card.js"
-        hass.http.register_static_path(card_url, str(card_path), cache_headers=True)
-        add_extra_js_url(hass, card_url)
-        hass.data[f"{DOMAIN}_card_registered"] = True
 
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
     return True
