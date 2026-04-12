@@ -5,7 +5,6 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import timedelta
 import logging
-from pathlib import Path
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
@@ -28,8 +27,6 @@ class DWMPData:
 
     packages: list[dict] = field(default_factory=list)
     package_details: dict[int, dict] = field(default_factory=dict)
-    unread_count: int = 0
-    notifications: list[dict] = field(default_factory=list)
     version: str = ""
 
 
@@ -50,6 +47,7 @@ class DWMPCoordinator(DataUpdateCoordinator[DWMPData]):
         try:
             packages = await self.client.list_packages()
 
+            # Fetch event timeline for active packages
             details: dict[int, dict] = {}
             for pkg in packages:
                 if pkg.get("current_status") in ACTIVE_STATUSES:
@@ -59,25 +57,27 @@ class DWMPCoordinator(DataUpdateCoordinator[DWMPData]):
                     except Exception:
                         _LOGGER.debug("Failed to fetch details for package %s", pkg["id"])
 
-            unread_count = await self.client.get_unread_count()
-            notifications = await self.client.list_notifications(limit=20)
-
-            current_ids = {n["id"] for n in notifications}
-            new_ids = current_ids - self._previous_notification_ids
-            if self._previous_notification_ids:
-                for notification in notifications:
-                    if notification["id"] in new_ids:
-                        self.hass.bus.async_fire(
-                            "dwmp_package_status_changed",
-                            {
-                                "tracking_number": notification.get("tracking_number"),
-                                "carrier": notification.get("carrier"),
-                                "label": notification.get("label"),
-                                "old_status": notification.get("old_status"),
-                                "new_status": notification.get("new_status"),
-                            },
-                        )
-            self._previous_notification_ids = current_ids
+            # Check for new notifications to fire HA events
+            try:
+                notifications = await self.client.list_notifications(limit=20)
+                current_ids = {n["id"] for n in notifications}
+                new_ids = current_ids - self._previous_notification_ids
+                if self._previous_notification_ids:
+                    for notification in notifications:
+                        if notification["id"] in new_ids:
+                            self.hass.bus.async_fire(
+                                "dwmp_package_status_changed",
+                                {
+                                    "tracking_number": notification.get("tracking_number"),
+                                    "carrier": notification.get("carrier"),
+                                    "label": notification.get("label"),
+                                    "old_status": notification.get("old_status"),
+                                    "new_status": notification.get("new_status"),
+                                },
+                            )
+                self._previous_notification_ids = current_ids
+            except Exception:
+                _LOGGER.debug("Failed to fetch notifications for event firing")
 
             version = ""
             try:
@@ -89,8 +89,6 @@ class DWMPCoordinator(DataUpdateCoordinator[DWMPData]):
             return DWMPData(
                 packages=packages,
                 package_details=details,
-                unread_count=unread_count,
-                notifications=notifications,
                 version=version,
             )
 
@@ -102,8 +100,6 @@ class DWMPCoordinator(DataUpdateCoordinator[DWMPData]):
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Set up DWMP from a config entry."""
-    _LOGGER.debug("Setting up DWMP integration for %s", entry.data[CONF_URL])
-
     session = async_get_clientsession(hass)
     client = DWMPApiClient(session, entry.data[CONF_URL], entry.data[CONF_TOKEN])
 
@@ -114,8 +110,6 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     hass.data[DOMAIN][entry.entry_id] = coordinator
 
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
-
-    _LOGGER.debug("DWMP integration setup complete")
     return True
 
 

@@ -30,7 +30,7 @@ class DWMPTrackingCard extends LitElement {
   }
 
   static getStubConfig() {
-    return { entity: "sensor.dwmp_active_packages" };
+    return { entity: "sensor.dude_where_s_my_package_packages" };
   }
 
   _toggleExpand(pkgId) {
@@ -163,8 +163,10 @@ class DWMPTrackingCard extends LitElement {
       `;
     }
 
-    const packages = entity.attributes.packages || [];
+    const active = entity.attributes.active || [];
+    const delivered = entity.attributes.delivered || [];
     const activeCount = entity.state;
+    const showDelivered = this.config.show_delivered || false;
 
     return html`
       <ha-card>
@@ -176,9 +178,17 @@ class DWMPTrackingCard extends LitElement {
           <span class="header-badge">${activeCount}</span>
         </div>
         <div class="card-content">
-          ${packages.length === 0
+          ${active.length === 0
             ? html`<div class="no-events">No active packages</div>`
-            : packages.map((pkg) => this._renderPackage(pkg))}
+            : active.map((pkg) => this._renderPackage(pkg))}
+          ${showDelivered && delivered.length > 0
+            ? html`
+                <div class="section-divider">
+                  <span>Delivered (${delivered.length})</span>
+                </div>
+                ${delivered.map((pkg) => this._renderPackage(pkg))}
+              `
+            : ""}
         </div>
       </ha-card>
     `;
@@ -396,6 +406,26 @@ class DWMPTrackingCard extends LitElement {
       .timeline-loc {
         font-size: 0.7rem;
         color: var(--secondary-text-color);
+      }
+
+      .section-divider {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin: 12px 0 8px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: var(--secondary-text-color);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .section-divider::before,
+      .section-divider::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        background: var(--divider-color);
       }
 
       .no-events {
