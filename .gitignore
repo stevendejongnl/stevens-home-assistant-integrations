@@ -1,0 +1,5 @@
+.playwright-mcp/
+*.jpg
+*.jpeg
+*.png
+__pycache__/
