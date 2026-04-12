@@ -109,6 +109,16 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     hass.data.setdefault(DOMAIN, {})
     hass.data[DOMAIN][entry.entry_id] = coordinator
 
+    # Serve the Lovelace card JS (once per HA session)
+    if f"{DOMAIN}_card_registered" not in hass.data:
+        card_path = Path(__file__).parent / "www" / "dwmp-tracking-card.js"
+        hass.http.register_static_path(
+            f"/{DOMAIN}/dwmp-tracking-card.js",
+            str(card_path),
+            cache_headers=True,
+        )
+        hass.data[f"{DOMAIN}_card_registered"] = True
+
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
     return True
 
