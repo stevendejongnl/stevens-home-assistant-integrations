@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 from datetime import timedelta
 import logging
+from pathlib import Path
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
@@ -109,8 +110,30 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     hass.data.setdefault(DOMAIN, {})
     hass.data[DOMAIN][entry.entry_id] = coordinator
 
+    # Auto-register the Lovelace card (once per HA session)
+    if f"{DOMAIN}_card_registered" not in hass.data:
+        card_url = f"/{DOMAIN}/dwmp-tracking-card.js"
+        card_path = Path(__file__).parent / "www" / "dwmp-tracking-card.js"
+        hass.http.register_static_path(card_url, str(card_path), cache_headers=True)
+
+        # Register as Lovelace resource if not already present
+        await _register_card_resource(hass, card_url)
+        hass.data[f"{DOMAIN}_card_registered"] = True
+
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
     return True
+
+
+async def _register_card_resource(hass: HomeAssistant, url: str) -> None:
+    """Register the card JS as a Lovelace resource if not already registered."""
+    try:
+        resources = await hass.data["lovelace"]["resources"].async_get_info()
+        if not any(r["url"] == url for r in resources):
+            await hass.data["lovelace"]["resources"].async_create_item(
+                {"url": url, "res_type": "module"}
+            )
+    except Exception:
+        _LOGGER.debug("Could not auto-register Lovelace resource, add manually: %s", url)
 
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
