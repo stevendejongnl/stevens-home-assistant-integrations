@@ -14,14 +14,12 @@ from homeassistant.exceptions import ConfigEntryAuthFailed
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
-from .api_client import DWMPApiClient, DWMPAuthError, DWMPConnectionError
+from .api_client import DWMPApiClient, DWMPApiError, DWMPAuthError, DWMPConnectionError
 from .const import ACTIVE_STATUSES, CONF_TOKEN, CONF_URL, DEFAULT_SCAN_INTERVAL, DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
 PLATFORMS = [Platform.SENSOR]
-
-type DWMPConfigEntry = ConfigEntry[DWMPCoordinator]
 
 
 @dataclass
@@ -38,8 +36,6 @@ class DWMPData:
 class DWMPCoordinator(DataUpdateCoordinator[DWMPData]):
     """Coordinator that polls the DWMP API."""
 
-    config_entry: DWMPConfigEntry
-
     def __init__(self, hass: HomeAssistant, client: DWMPApiClient) -> None:
         super().__init__(
             hass,
@@ -54,7 +50,6 @@ class DWMPCoordinator(DataUpdateCoordinator[DWMPData]):
         try:
             packages = await self.client.list_packages()
 
-            # Fetch details (with events) for active packages only
             details: dict[int, dict] = {}
             for pkg in packages:
                 if pkg.get("current_status") in ACTIVE_STATUSES:
@@ -67,10 +62,9 @@ class DWMPCoordinator(DataUpdateCoordinator[DWMPData]):
             unread_count = await self.client.get_unread_count()
             notifications = await self.client.list_notifications(limit=20)
 
-            # Fire events for new notifications
             current_ids = {n["id"] for n in notifications}
             new_ids = current_ids - self._previous_notification_ids
-            if self._previous_notification_ids:  # Skip first poll
+            if self._previous_notification_ids:
                 for notification in notifications:
                     if notification["id"] in new_ids:
                         self.hass.bus.async_fire(
@@ -85,7 +79,6 @@ class DWMPCoordinator(DataUpdateCoordinator[DWMPData]):
                         )
             self._previous_notification_ids = current_ids
 
-            # Get version from health
             version = ""
             try:
                 health = await self.client.health()
@@ -103,32 +96,32 @@ class DWMPCoordinator(DataUpdateCoordinator[DWMPData]):
 
         except DWMPAuthError as err:
             raise ConfigEntryAuthFailed("Token expired or invalid") from err
-        except DWMPConnectionError as err:
-            raise UpdateFailed(f"Cannot reach DWMP: {err}") from err
+        except (DWMPConnectionError, DWMPApiError) as err:
+            raise UpdateFailed(str(err)) from err
 
 
-async def async_setup_entry(hass: HomeAssistant, entry: DWMPConfigEntry) -> bool:
+async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Set up DWMP from a config entry."""
+    _LOGGER.debug("Setting up DWMP integration for %s", entry.data[CONF_URL])
+
     session = async_get_clientsession(hass)
     client = DWMPApiClient(session, entry.data[CONF_URL], entry.data[CONF_TOKEN])
 
     coordinator = DWMPCoordinator(hass, client)
     await coordinator.async_config_entry_first_refresh()
 
-    entry.runtime_data = coordinator
-
-    # Register the Lovelace card JS
-    card_path = Path(__file__).parent / "www" / "dwmp-tracking-card.js"
-    hass.http.register_static_path(
-        "/dwmp/dwmp-tracking-card.js",
-        str(card_path),
-        cache_headers=True,
-    )
+    hass.data.setdefault(DOMAIN, {})
+    hass.data[DOMAIN][entry.entry_id] = coordinator
 
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
+
+    _LOGGER.debug("DWMP integration setup complete")
     return True
 
 
-async def async_unload_entry(hass: HomeAssistant, entry: DWMPConfigEntry) -> bool:
+async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     """Unload a DWMP config entry."""
-    return await hass.config_entries.async_unload_platforms(entry, PLATFORMS)
+    unload_ok = await hass.config_entries.async_unload_platforms(entry, PLATFORMS)
+    if unload_ok:
+        hass.data[DOMAIN].pop(entry.entry_id, None)
+    return unload_ok
