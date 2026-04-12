@@ -46,7 +46,7 @@ class DWMPPackagesSensor(CoordinatorEntity[DWMPCoordinator], SensorEntity):
         self._attr_unique_id = f"{entry.entry_id}_packages"
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, entry.entry_id)},
-            name="Dude, Where's My Package?",
+            name="DWMP",
             manufacturer="MadeBySteven",
             sw_version=coordinator.data.version if coordinator.data else None,
             configuration_url=entry.data[CONF_URL],

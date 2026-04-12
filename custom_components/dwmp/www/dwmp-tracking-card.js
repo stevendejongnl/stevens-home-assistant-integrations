@@ -30,7 +30,7 @@ class DWMPTrackingCard extends LitElement {
   }
 
   static getStubConfig() {
-    return { entity: "sensor.dude_where_s_my_package_packages" };
+    return { entity: "sensor.dwmp_packages" };
   }
 
   _toggleExpand(pkgId) {

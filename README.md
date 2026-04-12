@@ -8,7 +8,7 @@ Custom Home Assistant integrations for personal home automation projects.
 
 Track your packages from PostNL, DHL, DPD, and Amazon directly in Home Assistant.
 
-**Sensor:** `sensor.dude_where_s_my_package_packages`
+**Sensor:** `sensor.dwmp_packages`
 - State: number of active (non-delivered) packages
 - Attributes:
   - `active` — active packages with full event timeline
@@ -21,7 +21,7 @@ Track your packages from PostNL, DHL, DPD, and Amazon directly in Home Assistant
 
 ```yaml
 type: custom:dwmp-tracking-card
-entity: sensor.dude_where_s_my_package_packages
+entity: sensor.dwmp_packages
 show_delivered: false  # optional: show delivered packages section
 show_timeline: true    # optional: expandable event timeline per package
 ```
