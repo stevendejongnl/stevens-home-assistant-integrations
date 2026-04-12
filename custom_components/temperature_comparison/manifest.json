@@ -3,7 +3,7 @@
     "name": "Temperature Comparison",
     "codeowners": ["@stevendejongnl"],
     "config_flow": true,
-    "dependencies": ["recorder"],
+    "dependencies": ["recorder", "frontend"],
     "documentation": "https://github.com/stevendejongnl/stevens-home-assistant-integrations",
     "integration_type": "service",
     "iot_class": "local_polling",

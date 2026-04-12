@@ -1,0 +1,702 @@
+- generic [ref=e10]:
+  - complementary [ref=e11]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - generic "Sidebar toggle" [ref=e16]:
+          - button "Sidebar toggle" [ref=e17] [cursor=pointer]:
+            - generic [ref=e19]:
+              - img
+        - generic [ref=e20]: Home Assistant
+      - generic [ref=e21]:
+        - generic [ref=e23]:
+          - generic:
+            - listitem [ref=e25] [cursor=pointer]:
+              - generic [ref=e26]:
+                - generic [ref=e28]:
+                  - img
+                - generic [ref=e30]: Overview
+            - listitem [ref=e32] [cursor=pointer]:
+              - generic [ref=e33]:
+                - generic [ref=e35]:
+                  - img
+                - generic [ref=e37]: Daily Todos
+            - listitem [ref=e39] [cursor=pointer]:
+              - generic [ref=e40]:
+                - generic [ref=e42]:
+                  - img
+                - generic [ref=e44]: Steven
+            - listitem [ref=e46] [cursor=pointer]:
+              - generic [ref=e47]:
+                - generic [ref=e48]:
+                  - img
+                - generic [ref=e50]: Energy
+            - listitem [ref=e52] [cursor=pointer]:
+              - generic [ref=e53]:
+                - generic [ref=e55]:
+                  - img
+                - generic [ref=e57]: Automations
+            - listitem [ref=e59] [cursor=pointer]:
+              - generic [ref=e60]:
+                - generic [ref=e62]:
+                  - img
+                - generic [ref=e64]: Scripts
+            - listitem [ref=e66] [cursor=pointer]:
+              - generic [ref=e67]:
+                - generic [ref=e69]:
+                  - img
+                - generic [ref=e71]: Integrations
+            - listitem [ref=e73] [cursor=pointer]:
+              - generic [ref=e74]:
+                - generic [ref=e76]:
+                  - img
+                - generic [ref=e78]: Devices
+            - listitem [ref=e80] [cursor=pointer]:
+              - generic [ref=e81]:
+                - generic [ref=e83]:
+                  - img
+                - generic [ref=e85]: Studio Code Server
+            - listitem [ref=e87] [cursor=pointer]:
+              - generic [ref=e88]:
+                - generic [ref=e90]:
+                  - img
+                - generic [ref=e92]: HACS
+            - listitem [ref=e94] [cursor=pointer]:
+              - generic [ref=e95]:
+                - generic [ref=e97]:
+                  - img
+                - generic [ref=e99]: ESPHome Builder
+            - listitem [ref=e101] [cursor=pointer]:
+              - generic [ref=e102]:
+                - generic [ref=e104]:
+                  - img
+                - generic [ref=e106]: Claude Code
+            - listitem [ref=e108] [cursor=pointer]:
+              - generic [ref=e109]:
+                - generic [ref=e111]:
+                  - img
+                - generic [ref=e113]: Frigate
+            - listitem [ref=e115] [cursor=pointer]:
+              - generic [ref=e116]:
+                - generic [ref=e118]:
+                  - img
+                - generic [ref=e120]: Zigbee2MQTT
+            - listitem [ref=e122] [cursor=pointer]:
+              - generic [ref=e123]:
+                - generic [ref=e124]:
+                  - img
+                - generic [ref=e126]: Activity
+            - listitem [ref=e128] [cursor=pointer]:
+              - generic [ref=e129]:
+                - generic [ref=e131]:
+                  - img
+                - generic [ref=e133]: System Logs
+            - listitem [ref=e135] [cursor=pointer]:
+              - generic [ref=e136]:
+                - generic [ref=e138]:
+                  - img
+                - generic [ref=e140]: Home Maintenance
+            - listitem [ref=e142] [cursor=pointer]:
+              - generic [ref=e143]:
+                - generic [ref=e145]:
+                  - img
+                - generic [ref=e147]: Picnic Swipe
+            - listitem [ref=e149] [cursor=pointer]:
+              - generic [ref=e150]:
+                - generic [ref=e152]:
+                  - img
+                - generic [ref=e154]: Switch Manager
+        - generic [ref=e155]:
+          - generic:
+            - listitem [ref=e157] [cursor=pointer]:
+              - generic [ref=e158]:
+                - generic [ref=e159]:
+                  - img
+                - generic [ref=e161]: Settings
+            - listitem [ref=e163] [cursor=pointer]:
+              - generic [ref=e164]:
+                - generic [ref=e165]:
+                  - img
+                - generic [ref=e167]: Notifications
+            - listitem [ref=e169] [cursor=pointer]:
+              - generic [ref=e174]: Steven de Jong
+  - generic [ref=e179]:
+    - generic [ref=e182]:
+      - tablist [ref=e187]:
+        - generic:
+          - tab [ref=e188]:
+            - generic [ref=e191] [cursor=pointer]:
+              - img
+          - tab "Rooms" [ref=e192]:
+            - generic "Rooms" [ref=e194] [cursor=pointer]:
+              - generic [ref=e195]:
+                - img
+          - tab "Thermostats" [ref=e196]:
+            - generic "Thermostats" [ref=e198] [cursor=pointer]:
+              - generic [ref=e199]:
+                - img
+          - tab "Stats" [selected] [ref=e200]:
+            - generic "Stats" [ref=e202] [cursor=pointer]:
+              - generic [ref=e203]:
+                - img
+          - tab "Music" [ref=e204]:
+            - generic "Music" [ref=e206] [cursor=pointer]:
+              - generic [ref=e207]:
+                - img
+          - tab "Plants" [ref=e208]:
+            - generic "Plants" [ref=e210] [cursor=pointer]:
+              - generic [ref=e211]:
+                - img
+          - tab "Switches" [ref=e212]:
+            - generic "Switches" [ref=e214] [cursor=pointer]:
+              - generic [ref=e215]:
+                - img
+          - tab "Lights (Backup)" [ref=e216]:
+            - generic "Lights (Backup)" [ref=e218] [cursor=pointer]:
+              - generic [ref=e219]:
+                - img
+      - generic [ref=e220]:
+        - generic [ref=e221]:
+          - generic:
+            - generic "Add to Home Assistant" [ref=e223]:
+              - button [ref=e224] [cursor=pointer]:
+                - generic [ref=e226]:
+                  - img
+            - generic:
+              - generic: Add device
+              - generic: Create automation
+              - generic: Create area
+              - generic: Add person
+        - button [ref=e229] [cursor=pointer]:
+          - generic [ref=e231]:
+            - img
+        - button [ref=e234] [cursor=pointer]:
+          - generic [ref=e236]:
+            - img
+        - button [ref=e239] [cursor=pointer]:
+          - generic [ref=e241]:
+            - img
+    - generic [ref=e249]:
+      - generic [ref=e255]:
+        - paragraph [ref=e262]: Temperature Comparison (Year-over-Year)
+        - generic [ref=e267]:
+          - generic [ref=e270]:
+            - img
+          - generic [ref=e272]: Configuration error
+      - generic [ref=e278]:
+        - paragraph [ref=e285]: Living room front temperatures
+        - generic [ref=e304]:
+          - button "Current 19.0 °C" [ref=e305] [cursor=pointer]
+          - generic [ref=e306]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Current
+                    - generic:
+                      - generic:
+                        - generic: 19.0 °C
+        - generic [ref=e313]:
+          - button "Last year Unknown" [ref=e314] [cursor=pointer]
+          - generic [ref=e315]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Last year
+                    - generic:
+                      - generic:
+                        - generic: Unknown
+        - generic [ref=e322]:
+          - generic [ref=e325]:
+            - img
+          - generic [ref=e327]: Configuration error
+      - generic [ref=e333]:
+        - paragraph [ref=e340]: Living room back temperatures
+        - generic [ref=e359]:
+          - button "Current 18.9 °C" [ref=e360] [cursor=pointer]
+          - generic [ref=e361]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Current
+                    - generic:
+                      - generic:
+                        - generic: 18.9 °C
+        - generic [ref=e368]:
+          - button "Last year Unknown" [ref=e369] [cursor=pointer]
+          - generic [ref=e370]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Last year
+                    - generic:
+                      - generic:
+                        - generic: Unknown
+        - generic [ref=e377]:
+          - generic [ref=e380]:
+            - img
+          - generic [ref=e382]: Configuration error
+      - generic [ref=e388]:
+        - paragraph [ref=e395]: Kitchen temperatures
+        - generic [ref=e404]: No statistics found.
+        - generic [ref=e409]:
+          - button "Current Unavailable" [ref=e410] [cursor=pointer]
+          - generic [ref=e411]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Current
+                    - generic:
+                      - generic:
+                        - generic: Unavailable
+        - generic [ref=e418]:
+          - button "Last year Unknown" [ref=e419] [cursor=pointer]
+          - generic [ref=e420]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Last year
+                    - generic:
+                      - generic:
+                        - generic: Unknown
+        - generic [ref=e427]:
+          - generic [ref=e430]:
+            - img
+          - generic [ref=e432]: Configuration error
+      - generic [ref=e438]:
+        - paragraph [ref=e445]: Dining room temperatures
+        - generic [ref=e464]:
+          - button "Current 17.9 °C" [ref=e465] [cursor=pointer]
+          - generic [ref=e466]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Current
+                    - generic:
+                      - generic:
+                        - generic: 17.9 °C
+        - generic [ref=e473]:
+          - button "Last year Unknown" [ref=e474] [cursor=pointer]
+          - generic [ref=e475]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Last year
+                    - generic:
+                      - generic:
+                        - generic: Unknown
+        - generic [ref=e482]:
+          - generic [ref=e485]:
+            - img
+          - generic [ref=e487]: Configuration error
+      - generic [ref=e493]:
+        - paragraph [ref=e500]: Bedroom temperatures
+        - generic [ref=e509]: No statistics found.
+        - generic [ref=e514]:
+          - button "Current Unavailable" [ref=e515] [cursor=pointer]
+          - generic [ref=e516]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Current
+                    - generic:
+                      - generic:
+                        - generic: Unavailable
+        - generic [ref=e523]:
+          - button "Last year Unknown" [ref=e524] [cursor=pointer]
+          - generic [ref=e525]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Last year
+                    - generic:
+                      - generic:
+                        - generic: Unknown
+        - generic [ref=e532]:
+          - generic [ref=e535]:
+            - img
+          - generic [ref=e537]: Configuration error
+      - generic [ref=e543]:
+        - paragraph [ref=e550]: Bedroom Scott temperatures
+        - generic [ref=e569]:
+          - button "Current Unavailable" [ref=e570] [cursor=pointer]
+          - generic [ref=e571]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Current
+                    - generic:
+                      - generic:
+                        - generic: Unavailable
+        - generic [ref=e578]:
+          - button "Last year Unknown" [ref=e579] [cursor=pointer]
+          - generic [ref=e580]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Last year
+                    - generic:
+                      - generic:
+                        - generic: Unknown
+        - generic [ref=e587]:
+          - generic [ref=e590]:
+            - img
+          - generic [ref=e592]: Configuration error
+      - generic [ref=e598]:
+        - paragraph [ref=e605]: Bedroom Marlou temperatures
+        - generic [ref=e624]:
+          - button "Current 19.4 °C" [ref=e625] [cursor=pointer]
+          - generic [ref=e626]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Current
+                    - generic:
+                      - generic:
+                        - generic: 19.4 °C
+        - generic [ref=e633]:
+          - button "Last year Unknown" [ref=e634] [cursor=pointer]
+          - generic [ref=e635]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Last year
+                    - generic:
+                      - generic:
+                        - generic: Unknown
+        - generic [ref=e642]:
+          - generic [ref=e645]:
+            - img
+          - generic [ref=e647]: Configuration error
+      - generic [ref=e653]:
+        - paragraph [ref=e660]: Bathroom temperatures
+        - generic [ref=e679]:
+          - button "Current 19.8 °C" [ref=e680] [cursor=pointer]
+          - generic [ref=e681]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Current
+                    - generic:
+                      - generic:
+                        - generic: 19.8 °C
+        - generic [ref=e688]:
+          - button "Last year Unknown" [ref=e689] [cursor=pointer]
+          - generic [ref=e690]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Last year
+                    - generic:
+                      - generic:
+                        - generic: Unknown
+        - generic [ref=e697]:
+          - generic [ref=e700]:
+            - img
+          - generic [ref=e702]: Configuration error
+      - generic [ref=e708]:
+        - paragraph [ref=e715]: Attic temperatures
+        - generic [ref=e734]:
+          - button "Current 26.5 °C" [ref=e735] [cursor=pointer]
+          - generic [ref=e736]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Current
+                    - generic:
+                      - generic:
+                        - generic: 26.5 °C
+        - generic [ref=e743]:
+          - button "Last year Unknown" [ref=e744] [cursor=pointer]
+          - generic [ref=e745]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Last year
+                    - generic:
+                      - generic:
+                        - generic: Unknown
+        - generic [ref=e752]:
+          - generic [ref=e755]:
+            - img
+          - generic [ref=e757]: Configuration error
+      - generic [ref=e763]:
+        - paragraph [ref=e770]: Outdoor temperatures
+        - generic [ref=e789]:
+          - button "Current 11.0 °C" [ref=e790] [cursor=pointer]
+          - generic [ref=e791]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Current
+                    - generic:
+                      - generic:
+                        - generic: 11.0 °C
+        - generic [ref=e798]:
+          - button "Last year Unknown" [ref=e799] [cursor=pointer]
+          - generic [ref=e800]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Last year
+                    - generic:
+                      - generic:
+                        - generic: Unknown
+      - generic [ref=e806]:
+        - paragraph [ref=e813]: Outdoor temperatures (honeywell)
+        - generic [ref=e832]:
+          - button "Current 8.0 °C" [ref=e833] [cursor=pointer]
+          - generic [ref=e834]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Current
+                    - generic:
+                      - generic:
+                        - generic: 8.0 °C
+        - generic [ref=e841]:
+          - button "Last year Unknown" [ref=e842] [cursor=pointer]
+          - generic [ref=e843]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - img
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - generic: Last year
+                    - generic:
+                      - generic:
+                        - generic: Unknown

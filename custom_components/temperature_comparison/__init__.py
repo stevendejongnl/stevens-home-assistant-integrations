@@ -8,10 +8,11 @@ import logging
 from pathlib import Path
 
 from homeassistant.components.frontend import add_extra_js_url
+from homeassistant.components.http import StaticPathConfig
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
 
 from .const import (
     CONF_HISTORY_DAYS,
@@ -77,13 +78,24 @@ class TemperatureComparisonCoordinator(DataUpdateCoordinator[TemperatureComparis
         self.weight_outdoor = weight_outdoor
 
     async def _async_update_data(self) -> TemperatureComparisonData:
+        inside_current = self._get_entity_value(self.inside_entity)
+        outside_current = self._get_entity_value(self.outside_entity)
+
+        now = datetime.now(timezone.utc)
+        period_start = now - timedelta(days=self.history_days)
+
+        inside_avg = None
+        outside_avg = None
+        inside_ly = None
+        outside_ly = None
+        in_ly_start = now - timedelta(days=365 + self.history_days)
+        in_ly_end = now - timedelta(days=365)
+        out_ly_start = in_ly_start
+        out_ly_end = in_ly_end
+        inside_daily: list[dict] = []
+        outside_daily: list[dict] = []
+
         try:
-            inside_current = self._get_entity_value(self.inside_entity)
-            outside_current = self._get_entity_value(self.outside_entity)
-
-            now = datetime.now(timezone.utc)
-            period_start = now - timedelta(days=self.history_days)
-
             inside_avg = await get_period_average(
                 self.hass, self.inside_entity, period_start, now
             )
@@ -98,20 +110,6 @@ class TemperatureComparisonCoordinator(DataUpdateCoordinator[TemperatureComparis
                 self.hass, self.outside_entity, self.history_days
             )
 
-            # Compute corrected difference
-            corrected = None
-            trend = "unknown"
-            if all(v is not None for v in [inside_avg, inside_ly, outside_avg, outside_ly]):
-                inside_diff = inside_ly - inside_avg
-                outdoor_correction = (outside_avg - outside_ly) * self.weight_outdoor
-                corrected = inside_diff + outdoor_correction
-                if corrected > 0.3:
-                    trend = "cooler"
-                elif corrected < -0.3:
-                    trend = "warmer"
-                else:
-                    trend = "similar"
-
             # Sparkline data (last 14 days)
             sparkline_start = now - timedelta(days=14)
             inside_daily = await get_daily_means(
@@ -120,28 +118,41 @@ class TemperatureComparisonCoordinator(DataUpdateCoordinator[TemperatureComparis
             outside_daily = await get_daily_means(
                 self.hass, self.outside_entity, sparkline_start, now
             )
+        except Exception:
+            _LOGGER.warning("Failed to fetch statistics, using current values only", exc_info=True)
 
-            return TemperatureComparisonData(
-                inside_current=inside_current,
-                outside_current=outside_current,
-                inside_avg_period=round(inside_avg, 2) if inside_avg is not None else None,
-                outside_avg_period=round(outside_avg, 2) if outside_avg is not None else None,
-                inside_avg_last_year=round(inside_ly, 2) if inside_ly is not None else None,
-                outside_avg_last_year=round(outside_ly, 2) if outside_ly is not None else None,
-                inside_last_year_start=in_ly_start.isoformat(),
-                inside_last_year_end=in_ly_end.isoformat(),
-                outside_last_year_start=out_ly_start.isoformat(),
-                outside_last_year_end=out_ly_end.isoformat(),
-                corrected_difference=round(corrected, 2) if corrected is not None else None,
-                trend=trend,
-                inside_daily_history=inside_daily,
-                outside_daily_history=outside_daily,
-                history_days=self.history_days,
-                weight_outdoor=self.weight_outdoor,
-            )
+        # Compute corrected difference
+        corrected = None
+        trend = "unknown"
+        if all(v is not None for v in [inside_avg, inside_ly, outside_avg, outside_ly]):
+            inside_diff = inside_ly - inside_avg
+            outdoor_correction = (outside_avg - outside_ly) * self.weight_outdoor
+            corrected = inside_diff + outdoor_correction
+            if corrected > 0.3:
+                trend = "cooler"
+            elif corrected < -0.3:
+                trend = "warmer"
+            else:
+                trend = "similar"
 
-        except Exception as err:
-            raise UpdateFailed(f"Failed to compute temperature comparison: {err}") from err
+        return TemperatureComparisonData(
+            inside_current=inside_current,
+            outside_current=outside_current,
+            inside_avg_period=round(inside_avg, 2) if inside_avg is not None else None,
+            outside_avg_period=round(outside_avg, 2) if outside_avg is not None else None,
+            inside_avg_last_year=round(inside_ly, 2) if inside_ly is not None else None,
+            outside_avg_last_year=round(outside_ly, 2) if outside_ly is not None else None,
+            inside_last_year_start=in_ly_start.isoformat(),
+            inside_last_year_end=in_ly_end.isoformat(),
+            outside_last_year_start=out_ly_start.isoformat(),
+            outside_last_year_end=out_ly_end.isoformat(),
+            corrected_difference=round(corrected, 2) if corrected is not None else None,
+            trend=trend,
+            inside_daily_history=inside_daily,
+            outside_daily_history=outside_daily,
+            history_days=self.history_days,
+            weight_outdoor=self.weight_outdoor,
+        )
 
     def _get_entity_value(self, entity_id: str) -> float | None:
         """Get the current numeric value of an entity."""
@@ -175,8 +186,10 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     if card_key not in hass.data:
         card_url = f"/{DOMAIN}/temperature-comparison-card.js"
         card_path = str(Path(__file__).parent / "www" / "temperature-comparison-card.js")
-        hass.http.register_static_path(card_url, card_path, cache_headers=True)
-        add_extra_js_url(hass, card_url)
+        await hass.http.async_register_static_paths(
+            [StaticPathConfig(card_url, card_path, False)]
+        )
+        add_extra_js_url(hass, f"{card_url}?v=1.0.2")
         hass.data[card_key] = True
 
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)

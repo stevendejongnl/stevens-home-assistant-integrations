@@ -1,0 +1,1337 @@
+- generic [active] [ref=e8]:
+  - generic [ref=e10]:
+    - complementary [ref=e11]:
+      - generic [ref=e13]:
+        - generic [ref=e14]:
+          - generic "Sidebar toggle" [ref=e16]:
+            - button "Sidebar toggle" [ref=e17] [cursor=pointer]:
+              - generic [ref=e19]:
+                - img
+          - generic [ref=e20]: Home Assistant
+        - generic [ref=e21]:
+          - generic [ref=e23]:
+            - generic:
+              - listitem [ref=e25] [cursor=pointer]:
+                - generic [ref=e26]:
+                  - generic [ref=e28]:
+                    - img
+                  - generic [ref=e30]: Overview
+              - listitem [ref=e32] [cursor=pointer]:
+                - generic [ref=e33]:
+                  - generic [ref=e35]:
+                    - img
+                  - generic [ref=e37]: Daily Todos
+              - listitem [ref=e39] [cursor=pointer]:
+                - generic [ref=e40]:
+                  - generic [ref=e42]:
+                    - img
+                  - generic [ref=e44]: Steven
+              - listitem [ref=e46] [cursor=pointer]:
+                - generic [ref=e47]:
+                  - generic [ref=e48]:
+                    - img
+                  - generic [ref=e50]: Energy
+              - listitem [ref=e52] [cursor=pointer]:
+                - generic [ref=e53]:
+                  - generic [ref=e55]:
+                    - img
+                  - generic [ref=e57]: Automations
+              - listitem [ref=e59] [cursor=pointer]:
+                - generic [ref=e60]:
+                  - generic [ref=e62]:
+                    - img
+                  - generic [ref=e64]: Scripts
+              - listitem [ref=e66] [cursor=pointer]:
+                - generic [ref=e67]:
+                  - generic [ref=e69]:
+                    - img
+                  - generic [ref=e71]: Integrations
+              - listitem [ref=e73] [cursor=pointer]:
+                - generic [ref=e74]:
+                  - generic [ref=e76]:
+                    - img
+                  - generic [ref=e78]: Devices
+              - listitem [ref=e80] [cursor=pointer]:
+                - generic [ref=e81]:
+                  - generic [ref=e83]:
+                    - img
+                  - generic [ref=e85]: Studio Code Server
+              - listitem [ref=e87] [cursor=pointer]:
+                - generic [ref=e88]:
+                  - generic [ref=e90]:
+                    - img
+                  - generic [ref=e92]: HACS
+              - listitem [ref=e94] [cursor=pointer]:
+                - generic [ref=e95]:
+                  - generic [ref=e97]:
+                    - img
+                  - generic [ref=e99]: ESPHome Builder
+              - listitem [ref=e101] [cursor=pointer]:
+                - generic [ref=e102]:
+                  - generic [ref=e104]:
+                    - img
+                  - generic [ref=e106]: Claude Code
+              - listitem [ref=e108] [cursor=pointer]:
+                - generic [ref=e109]:
+                  - generic [ref=e111]:
+                    - img
+                  - generic [ref=e113]: Frigate
+              - listitem [ref=e115] [cursor=pointer]:
+                - generic [ref=e116]:
+                  - generic [ref=e118]:
+                    - img
+                  - generic [ref=e120]: Zigbee2MQTT
+              - listitem [ref=e122] [cursor=pointer]:
+                - generic [ref=e123]:
+                  - generic [ref=e124]:
+                    - img
+                  - generic [ref=e126]: Activity
+              - listitem [ref=e128] [cursor=pointer]:
+                - generic [ref=e129]:
+                  - generic [ref=e131]:
+                    - img
+                  - generic [ref=e133]: System Logs
+              - listitem [ref=e135] [cursor=pointer]:
+                - generic [ref=e136]:
+                  - generic [ref=e138]:
+                    - img
+                  - generic [ref=e140]: Home Maintenance
+              - listitem [ref=e142] [cursor=pointer]:
+                - generic [ref=e143]:
+                  - generic [ref=e145]:
+                    - img
+                  - generic [ref=e147]: Picnic Swipe
+              - listitem [ref=e149] [cursor=pointer]:
+                - generic [ref=e150]:
+                  - generic [ref=e152]:
+                    - img
+                  - generic [ref=e154]: Switch Manager
+          - generic [ref=e155]:
+            - generic:
+              - listitem [ref=e157] [cursor=pointer]:
+                - generic [ref=e158]:
+                  - generic [ref=e159]:
+                    - img
+                  - generic [ref=e161]: Settings
+              - listitem [ref=e163] [cursor=pointer]:
+                - generic [ref=e164]:
+                  - generic [ref=e165]:
+                    - img
+                  - generic [ref=e167]: Notifications
+              - listitem [ref=e169] [cursor=pointer]:
+                - generic [ref=e174]: Steven de Jong
+    - generic [ref=e180]:
+      - generic [ref=e183]:
+        - generic "Back" [ref=e186]:
+          - link "Back" [ref=e187] [cursor=pointer]:
+            - /url: /config
+            - generic [ref=e189]:
+              - img
+        - generic [ref=e190]:
+          - link "Integrations" [ref=e191] [cursor=pointer]:
+            - /url: /config/integrations
+            - tab "Integrations" [selected] [ref=e193]:
+              - generic [ref=e194]:
+                - img
+              - generic [ref=e195]: Integrations
+          - link "Devices" [ref=e196] [cursor=pointer]:
+            - /url: /config/devices
+            - tab "Devices" [ref=e198]:
+              - generic [ref=e199]:
+                - img
+              - generic [ref=e200]: Devices
+          - link "Entities" [ref=e201] [cursor=pointer]:
+            - /url: /config/entities
+            - tab "Entities" [ref=e203]:
+              - generic [ref=e204]:
+                - img
+              - generic [ref=e205]: Entities
+          - link "Helpers" [ref=e206] [cursor=pointer]:
+            - /url: /config/helpers
+            - tab "Helpers" [ref=e208]:
+              - generic [ref=e209]:
+                - img
+              - generic [ref=e210]: Helpers
+        - generic [ref=e213]:
+          - generic:
+            - generic "Menu" [ref=e215]:
+              - button "Menu" [ref=e216] [cursor=pointer]:
+                - generic [ref=e218]:
+                  - img
+            - generic:
+              - generic: Application Credentials
+      - generic [ref=e220]:
+        - generic:
+          - generic [ref=e221]:
+            - generic [ref=e224]:
+              - generic [ref=e227]:
+                - img
+              - textbox [ref=e228]:
+                - /placeholder: Search integrations
+            - generic [ref=e229]:
+              - generic [ref=e230]:
+                - text: 1 disabled
+                - button "Show" [ref=e232] [cursor=pointer]:
+                  - generic [ref=e233]: Show
+              - generic [ref=e236]:
+                - generic:
+                  - generic "Menu" [ref=e238]:
+                    - button "Menu" [ref=e239] [cursor=pointer]:
+                      - generic [ref=e241]:
+                        - img
+                  - generic:
+                    - generic: Show ignored integrations
+                    - generic: Show disabled integrations
+          - generic [ref=e242]:
+            - generic [ref=e244]:
+              - generic:
+                - link "Afvalinfo" [ref=e245] [cursor=pointer]:
+                  - /url: /config/integrations/integration/afvalinfo
+                  - generic [ref=e246]:
+                    - heading "Afvalinfo" [level=1] [ref=e248]
+                    - generic [ref=e249]:
+                      - img
+                - generic [ref=e250]:
+                  - link "9 entities" [ref=e252] [cursor=pointer]:
+                    - /url: /config/entities?historyBack=1&domain=afvalinfo
+                    - generic [ref=e253]: 9 entities
+                  - generic [ref=e254]:
+                    - generic [ref=e256]:
+                      - img
+                    - generic [ref=e258]:
+                      - img
+            - generic [ref=e260]:
+              - generic:
+                - link "AirVisual Cloud" [ref=e261] [cursor=pointer]:
+                  - /url: /config/integrations/integration/airvisual
+                  - generic [ref=e262]:
+                    - heading "AirVisual Cloud" [level=1] [ref=e264]
+                    - generic [ref=e265]:
+                      - img
+                - generic [ref=e266]:
+                  - link "6 entities" [ref=e268] [cursor=pointer]:
+                    - /url: /config/entities?historyBack=1&domain=airvisual
+                    - generic [ref=e269]: 6 entities
+                  - generic [ref=e272]:
+                    - img
+            - generic [ref=e274]:
+              - generic:
+                - link "Android TV Remote" [ref=e275] [cursor=pointer]:
+                  - /url: /config/integrations/integration/androidtv_remote
+                  - generic [ref=e276]:
+                    - heading "Android TV Remote" [level=1] [ref=e278]
+                    - generic [ref=e279]:
+                      - img
+                - link "1 device" [ref=e282] [cursor=pointer]:
+                  - /url: /config/devices/device/1e9ac54807f0ccb9943e4006f412f371
+                  - generic [ref=e283]: 1 device
+            - generic [ref=e285]:
+              - generic:
+                - link "Average Sensor" [ref=e286] [cursor=pointer]:
+                  - /url: /config/integrations/integration/average
+                  - generic [ref=e287]:
+                    - heading "Average Sensor" [level=1] [ref=e289]
+                    - generic [ref=e290]:
+                      - img
+                - generic [ref=e291]:
+                  - link "3 entities" [ref=e293] [cursor=pointer]:
+                    - /url: /config/entities?historyBack=1&domain=average
+                    - generic [ref=e294]: 3 entities
+                  - generic [ref=e295]:
+                    - generic [ref=e297]:
+                      - img
+                    - generic [ref=e299]:
+                      - img
+            - generic [ref=e301]:
+              - generic:
+                - link "Backup" [ref=e302] [cursor=pointer]:
+                  - /url: /config/integrations/integration/backup
+                  - generic [ref=e303]:
+                    - heading "Backup" [level=1] [ref=e305]
+                    - generic [ref=e306]:
+                      - img
+                - link "1 service" [ref=e309] [cursor=pointer]:
+                  - /url: /config/devices/device/c9ea16c0c2d590f5a58ca7a80170ee77
+                  - generic [ref=e310]: 1 service
+            - generic [ref=e312]:
+              - generic:
+                - link "Bermuda BLE Trilateration" [ref=e313] [cursor=pointer]:
+                  - /url: /config/integrations/integration/bermuda
+                  - generic [ref=e314]:
+                    - heading "Bermuda BLE Trilateration" [level=1] [ref=e316]
+                    - generic [ref=e317]:
+                      - img
+                - generic [ref=e318]:
+                  - link "3 devices" [ref=e320] [cursor=pointer]:
+                    - /url: /config/devices/dashboard?historyBack=1&domain=bermuda
+                    - generic [ref=e321]: 3 devices
+                  - generic [ref=e324]:
+                    - img
+            - generic [ref=e326]:
+              - generic:
+                - link "Better Thermostat" [ref=e327] [cursor=pointer]:
+                  - /url: /config/integrations/integration/better_thermostat
+                  - generic [ref=e328]:
+                    - heading "Better Thermostat" [level=1] [ref=e330]
+                    - generic [ref=e331]:
+                      - img
+                - generic [ref=e332]:
+                  - link "8 devices" [ref=e334] [cursor=pointer]:
+                    - /url: /config/devices/dashboard?historyBack=1&domain=better_thermostat
+                    - generic [ref=e335]: 8 devices
+                  - generic [ref=e338]:
+                    - img
+            - generic [ref=e340]:
+              - generic:
+                - link "Bluetooth" [ref=e341] [cursor=pointer]:
+                  - /url: /config/integrations/integration/bluetooth
+                  - generic [ref=e342]:
+                    - heading "Bluetooth" [level=1] [ref=e344]
+                    - generic [ref=e345]:
+                      - img
+                - link "10 devices" [ref=e348] [cursor=pointer]:
+                  - /url: /config/devices/dashboard?historyBack=1&domain=bluetooth
+                  - generic [ref=e349]: 10 devices
+            - generic [ref=e351]:
+              - generic:
+                - link "Brother Printer" [ref=e352] [cursor=pointer]:
+                  - /url: /config/integrations/integration/brother
+                  - generic [ref=e353]:
+                    - heading "Brother Printer" [level=1] [ref=e355]
+                    - generic [ref=e356]:
+                      - img
+                - link "1 device" [ref=e359] [cursor=pointer]:
+                  - /url: /config/devices/device/e87fcd188ac6f0eb5fcde788e99cf9d7
+                  - generic [ref=e360]: 1 device
+            - generic [ref=e362]:
+              - generic:
+                - link "Climate Group" [ref=e363] [cursor=pointer]:
+                  - /url: /config/integrations/integration/climate_group
+                  - generic [ref=e364]:
+                    - heading "Climate Group" [level=1] [ref=e366]
+                    - generic [ref=e367]:
+                      - img
+                - generic [ref=e368]:
+                  - link "3 entities" [ref=e370] [cursor=pointer]:
+                    - /url: /config/entities?historyBack=1&domain=climate_group
+                    - generic [ref=e371]: 3 entities
+                  - generic [ref=e372]:
+                    - generic [ref=e374]:
+                      - img
+                    - generic [ref=e376]:
+                      - img
+            - generic [ref=e378]:
+              - generic:
+                - link "Command Line" [ref=e379] [cursor=pointer]:
+                  - /url: /config/integrations/integration/command_line
+                  - generic [ref=e380]:
+                    - heading "Command Line" [level=1] [ref=e382]
+                    - generic [ref=e383]:
+                      - img
+                - generic [ref=e384]:
+                  - link "1 entity" [ref=e386] [cursor=pointer]:
+                    - /url: /config/entities?historyBack=1&domain=command_line
+                    - generic [ref=e387]: 1 entity
+                  - generic [ref=e390]:
+                    - img
+            - generic [ref=e392]:
+              - generic:
+                - link "DLNA Digital Media Renderer" [ref=e393] [cursor=pointer]:
+                  - /url: /config/integrations/integration/dlna_dmr
+                  - generic [ref=e394]:
+                    - heading "DLNA Digital Media Renderer" [level=1] [ref=e396]
+                    - generic [ref=e397]:
+                      - img
+                - link "2 devices" [ref=e400] [cursor=pointer]:
+                  - /url: /config/devices/dashboard?historyBack=1&domain=dlna_dmr
+                  - generic [ref=e401]: 2 devices
+            - generic [ref=e403]:
+              - generic:
+                - link "DSMR Smart Meter" [ref=e404] [cursor=pointer]:
+                  - /url: /config/integrations/integration/dsmr
+                  - generic [ref=e405]:
+                    - heading "DSMR Smart Meter" [level=1] [ref=e407]
+                    - generic [ref=e408]:
+                      - img
+                - link "3 devices" [ref=e411] [cursor=pointer]:
+                  - /url: /config/devices/dashboard?historyBack=1&domain=dsmr
+                  - generic [ref=e412]: 3 devices
+            - generic [ref=e414]:
+              - generic:
+                - link "Dude, Where's My Package? Failed to set up" [ref=e415] [cursor=pointer]:
+                  - /url: /config/integrations/integration/dwmp
+                  - generic [ref=e416]:
+                    - generic [ref=e417]:
+                      - heading "Dude, Where's My Package?" [level=1] [ref=e418]
+                      - generic [ref=e419]:
+                        - generic [ref=e420]:
+                          - img
+                        - generic [ref=e421]: Failed to set up
+                    - generic [ref=e422]:
+                      - img
+                - generic [ref=e423]:
+                  - link "1 device" [ref=e425] [cursor=pointer]:
+                    - /url: /config/devices/device/46348cd2748cdd8a5b76bb60bc3737d7
+                    - generic [ref=e426]: 1 device
+                  - generic [ref=e427]:
+                    - generic [ref=e429]:
+                      - img
+                    - generic [ref=e431]:
+                      - img
+            - generic [ref=e433]:
+              - generic:
+                - link "EnergyZero" [ref=e434] [cursor=pointer]:
+                  - /url: /config/integrations/integration/energyzero
+                  - generic [ref=e435]:
+                    - heading "EnergyZero" [level=1] [ref=e437]
+                    - generic [ref=e438]:
+                      - img
+                - generic [ref=e439]:
+                  - link "2 services" [ref=e441] [cursor=pointer]:
+                    - /url: /config/devices/dashboard?historyBack=1&domain=energyzero
+                    - generic [ref=e442]: 2 services
+                  - generic [ref=e445]:
+                    - img
+            - generic [ref=e447]:
+              - generic:
+                - link "ESPHome" [ref=e448] [cursor=pointer]:
+                  - /url: /config/integrations/integration/esphome
+                  - generic [ref=e449]:
+                    - heading "ESPHome" [level=1] [ref=e451]
+                    - generic [ref=e452]:
+                      - img
+                - link "8 devices" [ref=e455] [cursor=pointer]:
+                  - /url: /config/devices/dashboard?historyBack=1&domain=esphome
+                  - generic [ref=e456]: 8 devices
+            - generic [ref=e458]:
+              - generic:
+                - link "Eufy Robovac" [ref=e459] [cursor=pointer]:
+                  - /url: /config/integrations/integration/robovac
+                  - generic [ref=e460]:
+                    - heading "Eufy Robovac" [level=1] [ref=e462]
+                    - generic [ref=e463]:
+                      - img
+                - generic [ref=e464]:
+                  - link "2 devices" [ref=e466] [cursor=pointer]:
+                    - /url: /config/devices/dashboard?historyBack=1&domain=robovac
+                    - generic [ref=e467]: 2 devices
+                  - generic [ref=e470]:
+                    - img
+            - generic [ref=e472]:
+              - generic:
+                - link "Frigate" [ref=e473] [cursor=pointer]:
+                  - /url: /config/integrations/integration/frigate
+                  - generic [ref=e474]:
+                    - heading "Frigate" [level=1] [ref=e476]
+                    - generic [ref=e477]:
+                      - img
+                - generic [ref=e478]:
+                  - link "8 devices" [ref=e480] [cursor=pointer]:
+                    - /url: /config/devices/dashboard?historyBack=1&domain=frigate
+                    - generic [ref=e481]: 8 devices
+                  - generic [ref=e484]:
+                    - img
+            - generic [ref=e486]:
+              - generic:
+                - link "GitHub" [ref=e487] [cursor=pointer]:
+                  - /url: /config/integrations/integration/github
+                  - generic [ref=e488]:
+                    - heading "GitHub" [level=1] [ref=e490]
+                    - generic [ref=e491]:
+                      - img
+                - generic [ref=e492]:
+                  - link "1 service" [ref=e494] [cursor=pointer]:
+                    - /url: /config/devices/device/8cbf1dc1ed57e0c6b4670f426b214e48
+                    - generic [ref=e495]: 1 service
+                  - generic [ref=e498]:
+                    - img
+            - generic [ref=e500]:
+              - generic:
+                - link "Google Calendar" [ref=e501] [cursor=pointer]:
+                  - /url: /config/integrations/integration/google
+                  - generic [ref=e502]:
+                    - heading "Google Calendar" [level=1] [ref=e504]
+                    - generic [ref=e505]:
+                      - img
+                - generic [ref=e506]:
+                  - link "29 entities" [ref=e508] [cursor=pointer]:
+                    - /url: /config/entities?historyBack=1&domain=google
+                    - generic [ref=e509]: 29 entities
+                  - generic [ref=e512]:
+                    - img
+            - generic [ref=e514]:
+              - generic:
+                - link "Google Cast" [ref=e515] [cursor=pointer]:
+                  - /url: /config/integrations/integration/cast
+                  - generic [ref=e516]:
+                    - heading "Google Cast" [level=1] [ref=e518]
+                    - generic [ref=e519]:
+                      - img
+                - link "1 device" [ref=e522] [cursor=pointer]:
+                  - /url: /config/devices/device/dd6fc2a8cfd4fa6cc45683dbee3e2ab0
+                  - generic [ref=e523]: 1 device
+            - generic [ref=e525]:
+              - generic:
+                - link "HACS" [ref=e526] [cursor=pointer]:
+                  - /url: /config/integrations/integration/hacs
+                  - generic [ref=e527]:
+                    - heading "HACS" [level=1] [ref=e529]
+                    - generic [ref=e530]:
+                      - img
+                - generic [ref=e531]:
+                  - link "63 services" [ref=e533] [cursor=pointer]:
+                    - /url: /config/devices/dashboard?historyBack=1&domain=hacs
+                    - generic [ref=e534]: 63 services
+                  - generic [ref=e535]:
+                    - generic [ref=e537]:
+                      - img
+                    - generic [ref=e539]:
+                      - img
+            - generic [ref=e541]:
+              - generic:
+                - link "Home Assistant Supervisor" [ref=e542] [cursor=pointer]:
+                  - /url: /config/integrations/integration/hassio
+                  - generic [ref=e543]:
+                    - heading "Home Assistant Supervisor" [level=1] [ref=e545]
+                    - generic [ref=e546]:
+                      - img
+                - link "13 services" [ref=e549] [cursor=pointer]:
+                  - /url: /config/devices/dashboard?historyBack=1&domain=hassio
+                  - generic [ref=e550]: 13 services
+            - generic [ref=e552]:
+              - generic:
+                - link "Home Maintenance" [ref=e553] [cursor=pointer]:
+                  - /url: /config/integrations/integration/home_maintenance
+                  - generic [ref=e554]:
+                    - heading "Home Maintenance" [level=1] [ref=e556]
+                    - generic [ref=e557]:
+                      - img
+                - generic [ref=e558]:
+                  - link "1 device" [ref=e560] [cursor=pointer]:
+                    - /url: /config/devices/device/b88c138d468e7b1a38d6155dea3226a2
+                    - generic [ref=e561]: 1 device
+                  - generic [ref=e564]:
+                    - img
+            - generic [ref=e566]:
+              - generic:
+                - link "HomeKit Bridge" [ref=e567] [cursor=pointer]:
+                  - /url: /config/integrations/integration/homekit
+                  - generic [ref=e568]:
+                    - heading "HomeKit Bridge" [level=1] [ref=e570]
+                    - generic [ref=e571]:
+                      - img
+                - link "1 service" [ref=e574] [cursor=pointer]:
+                  - /url: /config/devices/device/48e9d4a7b27ee0e09391d7791a2a0a51
+                  - generic [ref=e575]: 1 service
+            - generic [ref=e577]:
+              - generic:
+                - link "Honeywell Lyric" [ref=e578] [cursor=pointer]:
+                  - /url: /config/integrations/integration/lyric
+                  - generic [ref=e579]:
+                    - heading "Honeywell Lyric" [level=1] [ref=e581]
+                    - generic [ref=e582]:
+                      - img
+                - generic [ref=e583]:
+                  - link "1 device" [ref=e585] [cursor=pointer]:
+                    - /url: /config/devices/device/30ecbe950028b0ace863f666719d3e30
+                    - generic [ref=e586]: 1 device
+                  - generic [ref=e589]:
+                    - img
+            - generic [ref=e591]:
+              - generic:
+                - link "iBeacon Tracker" [ref=e592] [cursor=pointer]:
+                  - /url: /config/integrations/integration/ibeacon
+                  - generic [ref=e593]:
+                    - heading "iBeacon Tracker" [level=1] [ref=e595]
+                    - generic [ref=e596]:
+                      - img
+                - link "17 devices" [ref=e599] [cursor=pointer]:
+                  - /url: /config/devices/dashboard?historyBack=1&domain=ibeacon
+                  - generic [ref=e600]: 17 devices
+            - generic [ref=e602]:
+              - generic:
+                - link "InfluxDB" [ref=e603] [cursor=pointer]:
+                  - /url: /config/integrations/integration/influxdb
+                  - generic [ref=e604]:
+                    - heading "InfluxDB" [level=1] [ref=e606]
+                    - generic [ref=e607]:
+                      - img
+                - link "1 entry" [ref=e610] [cursor=pointer]:
+                  - /url: /config/integrations/integration/influxdb
+                  - generic [ref=e611]: 1 entry
+            - generic [ref=e613]:
+              - generic:
+                - link "Internet Printing Protocol (IPP)" [ref=e614] [cursor=pointer]:
+                  - /url: /config/integrations/integration/ipp
+                  - generic [ref=e615]:
+                    - heading "Internet Printing Protocol (IPP)" [level=1] [ref=e617]
+                    - generic [ref=e618]:
+                      - img
+                - link "1 device" [ref=e621] [cursor=pointer]:
+                  - /url: /config/devices/device/329f87e4934dd540f86f357ba2aa56b1
+                  - generic [ref=e622]: 1 device
+            - generic [ref=e624]:
+              - generic:
+                - link "Local To-do" [ref=e625] [cursor=pointer]:
+                  - /url: /config/integrations/integration/local_todo
+                  - generic [ref=e626]:
+                    - heading "Local To-do" [level=1] [ref=e628]
+                    - generic [ref=e629]:
+                      - img
+                - link "3 entities" [ref=e632] [cursor=pointer]:
+                  - /url: /config/entities?historyBack=1&domain=local_todo
+                  - generic [ref=e633]: 3 entities
+            - generic [ref=e635]:
+              - generic:
+                - link "Meteorologisk institutt (Met.no)" [ref=e636] [cursor=pointer]:
+                  - /url: /config/integrations/integration/met
+                  - generic [ref=e637]:
+                    - heading "Meteorologisk institutt (Met.no)" [level=1] [ref=e639]
+                    - generic [ref=e640]:
+                      - img
+                - generic [ref=e641]:
+                  - link "1 service" [ref=e643] [cursor=pointer]:
+                    - /url: /config/devices/device/0cae6940f5d6ef9b15cb2f499ca8d9c6
+                    - generic [ref=e644]: 1 service
+                  - generic [ref=e647]:
+                    - img
+            - generic [ref=e649]:
+              - generic:
+                - link "Mobile App" [ref=e650] [cursor=pointer]:
+                  - /url: /config/integrations/integration/mobile_app
+                  - generic [ref=e651]:
+                    - heading "Mobile App" [level=1] [ref=e653]
+                    - generic [ref=e654]:
+                      - img
+                - link "5 devices" [ref=e657] [cursor=pointer]:
+                  - /url: /config/devices/dashboard?historyBack=1&domain=mobile_app
+                  - generic [ref=e658]: 5 devices
+            - generic [ref=e660]:
+              - generic:
+                - link "Model Context Protocol Server" [ref=e661] [cursor=pointer]:
+                  - /url: /config/integrations/integration/mcp_server
+                  - generic [ref=e662]:
+                    - heading "Model Context Protocol Server" [level=1] [ref=e664]
+                    - generic [ref=e665]:
+                      - img
+                - link "1 entry" [ref=e668] [cursor=pointer]:
+                  - /url: /config/integrations/integration/mcp_server
+                  - generic [ref=e669]: 1 entry
+            - generic [ref=e671]:
+              - generic:
+                - link "Moonraker" [ref=e672] [cursor=pointer]:
+                  - /url: /config/integrations/integration/moonraker
+                  - generic [ref=e673]:
+                    - heading "Moonraker" [level=1] [ref=e675]
+                    - generic [ref=e676]:
+                      - img
+                - generic [ref=e677]:
+                  - link "1 device" [ref=e679] [cursor=pointer]:
+                    - /url: /config/devices/device/5b3b14fc8fb81a17e98c671bb2cf5940
+                    - generic [ref=e680]: 1 device
+                  - generic [ref=e683]:
+                    - img
+            - generic [ref=e685]:
+              - generic:
+                - link "MQTT" [ref=e686] [cursor=pointer]:
+                  - /url: /config/integrations/integration/mqtt
+                  - generic [ref=e687]:
+                    - heading "MQTT" [level=1] [ref=e689]
+                    - generic [ref=e690]:
+                      - img
+                - link "79 devices" [ref=e693] [cursor=pointer]:
+                  - /url: /config/devices/dashboard?historyBack=1&domain=mqtt
+                  - generic [ref=e694]: 79 devices
+            - generic [ref=e696]:
+              - generic:
+                - link "Music Player Daemon (MPD)" [ref=e697] [cursor=pointer]:
+                  - /url: /config/integrations/integration/mpd
+                  - generic [ref=e698]:
+                    - heading "Music Player Daemon (MPD)" [level=1] [ref=e700]
+                    - generic [ref=e701]:
+                      - img
+                - link "2 services" [ref=e704] [cursor=pointer]:
+                  - /url: /config/devices/dashboard?historyBack=1&domain=mpd
+                  - generic [ref=e705]: 2 services
+            - generic [ref=e707]:
+              - generic:
+                - link "Neerslag App (Buienalarm / Buienradar)" [ref=e708] [cursor=pointer]:
+                  - /url: /config/integrations/integration/neerslag
+                  - generic [ref=e709]:
+                    - heading "Neerslag App (Buienalarm / Buienradar)" [level=1] [ref=e711]
+                    - generic [ref=e712]:
+                      - img
+                - generic [ref=e713]:
+                  - link "1 device" [ref=e715] [cursor=pointer]:
+                    - /url: /config/devices/device/469221e9f396f4a0408f4b0ac12d64eb
+                    - generic [ref=e716]: 1 device
+                  - generic [ref=e717]:
+                    - generic [ref=e719]:
+                      - img
+                    - generic [ref=e721]:
+                      - img
+            - generic [ref=e723]:
+              - generic:
+                - link "Network UPS Tools (NUT)" [ref=e724] [cursor=pointer]:
+                  - /url: /config/integrations/integration/nut
+                  - generic [ref=e725]:
+                    - heading "Network UPS Tools (NUT)" [level=1] [ref=e727]
+                    - generic [ref=e728]:
+                      - img
+                - link "4 devices" [ref=e731] [cursor=pointer]:
+                  - /url: /config/devices/dashboard?historyBack=1&domain=nut
+                  - generic [ref=e732]: 4 devices
+            - generic [ref=e734]:
+              - generic:
+                - link "Nord Pool" [ref=e735] [cursor=pointer]:
+                  - /url: /config/integrations/integration/nordpool
+                  - generic [ref=e736]:
+                    - heading "Nord Pool" [level=1] [ref=e738]
+                    - generic [ref=e739]:
+                      - img
+                - generic [ref=e740]:
+                  - link "1 device" [ref=e742] [cursor=pointer]:
+                    - /url: /config/devices/device/982a5b5c0fdab0303d29237e8f845c9f
+                    - generic [ref=e743]: 1 device
+                  - generic [ref=e744]:
+                    - generic [ref=e746]:
+                      - img
+                    - generic [ref=e748]:
+                      - img
+            - generic [ref=e750]:
+              - generic:
+                - link "openHASP" [ref=e751] [cursor=pointer]:
+                  - /url: /config/integrations/integration/openhasp
+                  - generic [ref=e752]:
+                    - heading "openHASP" [level=1] [ref=e754]
+                    - generic [ref=e755]:
+                      - img
+                - generic [ref=e756]:
+                  - link "2 devices" [ref=e758] [cursor=pointer]:
+                    - /url: /config/devices/dashboard?historyBack=1&domain=openhasp
+                    - generic [ref=e759]: 2 devices
+                  - generic [ref=e762]:
+                    - img
+            - generic [ref=e764]:
+              - generic:
+                - link "OpenPlantbook" [ref=e765] [cursor=pointer]:
+                  - /url: /config/integrations/integration/openplantbook
+                  - generic [ref=e766]:
+                    - heading "OpenPlantbook" [level=1] [ref=e768]
+                    - generic [ref=e769]:
+                      - img
+                - generic [ref=e770]:
+                  - link "1 entry" [ref=e772] [cursor=pointer]:
+                    - /url: /config/integrations/integration/openplantbook
+                    - generic [ref=e773]: 1 entry
+                  - generic [ref=e774]:
+                    - generic [ref=e776]:
+                      - img
+                    - generic [ref=e778]:
+                      - img
+            - generic [ref=e780]:
+              - generic:
+                - link "OpenWeatherMap" [ref=e781] [cursor=pointer]:
+                  - /url: /config/integrations/integration/openweathermap
+                  - generic [ref=e782]:
+                    - heading "OpenWeatherMap" [level=1] [ref=e784]
+                    - generic [ref=e785]:
+                      - img
+                - generic [ref=e786]:
+                  - link "1 service" [ref=e788] [cursor=pointer]:
+                    - /url: /config/devices/device/40c06dee84d50181e2898019223b1ee7
+                    - generic [ref=e789]: 1 service
+                  - generic [ref=e792]:
+                    - img
+            - generic [ref=e794]:
+              - generic:
+                - link "Oral-B" [ref=e795] [cursor=pointer]:
+                  - /url: /config/integrations/integration/oralb
+                  - generic [ref=e796]:
+                    - heading "Oral-B" [level=1] [ref=e798]
+                    - generic [ref=e799]:
+                      - img
+                - link "2 devices" [ref=e802] [cursor=pointer]:
+                  - /url: /config/devices/dashboard?historyBack=1&domain=oralb
+                  - generic [ref=e803]: 2 devices
+            - generic [ref=e805]:
+              - generic:
+                - link "Philips Hue Failed setup, will retry" [ref=e806] [cursor=pointer]:
+                  - /url: /config/integrations/integration/hue
+                  - generic [ref=e807]:
+                    - generic [ref=e808]:
+                      - heading "Philips Hue" [level=1] [ref=e809]
+                      - generic [ref=e1236]:
+                        - generic [ref=e1237]:
+                          - img
+                        - generic [ref=e1238]: Failed setup, will retry
+                    - generic [ref=e813]:
+                      - img
+                - link "4 devices" [ref=e816] [cursor=pointer]:
+                  - /url: /config/devices/dashboard?historyBack=1&domain=hue
+                  - generic [ref=e817]: 4 devices
+            - generic [ref=e819]:
+              - generic:
+                - link "Picnic" [ref=e820] [cursor=pointer]:
+                  - /url: /config/integrations/integration/picnic
+                  - generic [ref=e821]:
+                    - heading "Picnic" [level=1] [ref=e823]
+                    - generic [ref=e824]:
+                      - img
+                - generic [ref=e825]:
+                  - link "1 service" [ref=e827] [cursor=pointer]:
+                    - /url: /config/devices/device/6e209f36ef08eb7f26928e989aa28361
+                    - generic [ref=e828]: 1 service
+                  - generic [ref=e831]:
+                    - img
+            - generic [ref=e833]:
+              - generic:
+                - link "Ping (ICMP)" [ref=e834] [cursor=pointer]:
+                  - /url: /config/integrations/integration/ping
+                  - generic [ref=e835]:
+                    - heading "Ping (ICMP)" [level=1] [ref=e837]
+                    - generic [ref=e838]:
+                      - img
+                - link "1 device" [ref=e841] [cursor=pointer]:
+                  - /url: /config/devices/device/d58ce339b459ccfc8e56e4f0ef205ad1
+                  - generic [ref=e842]: 1 device
+            - generic [ref=e844]:
+              - generic:
+                - link "Plant Monitor" [ref=e845] [cursor=pointer]:
+                  - /url: /config/integrations/integration/plant
+                  - generic [ref=e846]:
+                    - heading "Plant Monitor" [level=1] [ref=e848]
+                    - generic [ref=e849]:
+                      - img
+                - generic [ref=e850]:
+                  - link "6 devices" [ref=e852] [cursor=pointer]:
+                    - /url: /config/devices/dashboard?historyBack=1&domain=plant
+                    - generic [ref=e853]: 6 devices
+                  - generic [ref=e856]:
+                    - img
+            - generic [ref=e858]:
+              - generic:
+                - link "Private BLE Device" [ref=e859] [cursor=pointer]:
+                  - /url: /config/integrations/integration/private_ble_device
+                  - generic [ref=e860]:
+                    - heading "Private BLE Device" [level=1] [ref=e862]
+                    - generic [ref=e863]:
+                      - img
+                - link "1 device" [ref=e866] [cursor=pointer]:
+                  - /url: /config/devices/device/d5c45d39b85ad1e8eccbe0969640dcd9
+                  - generic [ref=e867]: 1 device
+            - generic [ref=e869]:
+              - generic:
+                - link "Profiler" [ref=e870] [cursor=pointer]:
+                  - /url: /config/integrations/integration/profiler
+                  - generic [ref=e871]:
+                    - heading "Profiler" [level=1] [ref=e873]
+                    - generic [ref=e874]:
+                      - img
+                - link "1 entry" [ref=e877] [cursor=pointer]:
+                  - /url: /config/integrations/integration/profiler
+                  - generic [ref=e878]: 1 entry
+            - generic [ref=e880]:
+              - generic:
+                - link "Public Transport Departures" [ref=e881] [cursor=pointer]:
+                  - /url: /config/integrations/integration/ha_departures
+                  - generic [ref=e882]:
+                    - heading "Public Transport Departures" [level=1] [ref=e884]
+                    - generic [ref=e885]:
+                      - img
+                - generic [ref=e886]:
+                  - link "2 entities" [ref=e888] [cursor=pointer]:
+                    - /url: /config/entities?historyBack=1&domain=ha_departures
+                    - generic [ref=e889]: 2 entities
+                  - generic [ref=e890]:
+                    - generic [ref=e892]:
+                      - img
+                    - generic [ref=e894]:
+                      - img
+            - generic [ref=e896]:
+              - generic:
+                - link "Pyscript Python scripting" [ref=e897] [cursor=pointer]:
+                  - /url: /config/integrations/integration/pyscript
+                  - generic [ref=e898]:
+                    - heading "Pyscript Python scripting" [level=1] [ref=e900]
+                    - generic [ref=e901]:
+                      - img
+                - generic [ref=e902]:
+                  - link "1 entry" [ref=e904] [cursor=pointer]:
+                    - /url: /config/integrations/integration/pyscript
+                    - generic [ref=e905]: 1 entry
+                  - generic [ref=e908]:
+                    - img
+            - generic [ref=e910]:
+              - generic:
+                - link "Radio Browser" [ref=e911] [cursor=pointer]:
+                  - /url: /config/integrations/integration/radio_browser
+                  - generic [ref=e912]:
+                    - heading "Radio Browser" [level=1] [ref=e914]
+                    - generic [ref=e915]:
+                      - img
+                - generic [ref=e916]:
+                  - link "1 entry" [ref=e918] [cursor=pointer]:
+                    - /url: /config/integrations/integration/radio_browser
+                    - generic [ref=e919]: 1 entry
+                  - generic [ref=e922]:
+                    - img
+            - generic [ref=e924]:
+              - generic:
+                - link "Reolink" [ref=e925] [cursor=pointer]:
+                  - /url: /config/integrations/integration/reolink
+                  - generic [ref=e926]:
+                    - heading "Reolink" [level=1] [ref=e928]
+                    - generic [ref=e929]:
+                      - img
+                - link "6 devices" [ref=e932] [cursor=pointer]:
+                  - /url: /config/devices/dashboard?historyBack=1&domain=reolink
+                  - generic [ref=e933]: 6 devices
+            - generic [ref=e935]:
+              - generic:
+                - link "RESTful" [ref=e936] [cursor=pointer]:
+                  - /url: /config/integrations/integration/rest
+                  - generic [ref=e937]:
+                    - heading "RESTful" [level=1] [ref=e939]
+                    - generic [ref=e940]:
+                      - img
+                - generic [ref=e941]:
+                  - link "4 entities" [ref=e943] [cursor=pointer]:
+                    - /url: /config/entities?historyBack=1&domain=rest
+                    - generic [ref=e944]: 4 entities
+                  - generic [ref=e947]:
+                    - img
+            - generic [ref=e949]:
+              - generic:
+                - link "RESTful Command" [ref=e950] [cursor=pointer]:
+                  - /url: /config/integrations/integration/rest_command
+                  - generic [ref=e951]:
+                    - heading "RESTful Command" [level=1] [ref=e953]
+                    - generic [ref=e954]:
+                      - img
+                - generic [ref=e958]:
+                  - img
+            - generic [ref=e960]:
+              - generic:
+                - link "Shairport Sync Media Player" [ref=e961] [cursor=pointer]:
+                  - /url: /config/integrations/integration/shairport_sync
+                  - generic [ref=e962]:
+                    - heading "Shairport Sync Media Player" [level=1] [ref=e964]
+                    - generic [ref=e965]:
+                      - img
+                - generic [ref=e966]:
+                  - link "1 device" [ref=e968] [cursor=pointer]:
+                    - /url: /config/devices/device/d003c4a4ded25b8f1018bbf718814405
+                    - generic [ref=e969]: 1 device
+                  - generic [ref=e972]:
+                    - img
+            - generic [ref=e974]:
+              - generic:
+                - link "Shell Command" [ref=e975] [cursor=pointer]:
+                  - /url: /config/integrations/integration/shell_command
+                  - generic [ref=e976]:
+                    - heading "Shell Command" [level=1] [ref=e978]
+                    - generic [ref=e979]:
+                      - img
+                - generic [ref=e983]:
+                  - img
+            - generic [ref=e985]:
+              - generic:
+                - link "Shelly Failed setup, will retry" [ref=e986] [cursor=pointer]:
+                  - /url: /config/integrations/integration/shelly
+                  - generic [ref=e987]:
+                    - generic [ref=e988]:
+                      - heading "Shelly" [level=1] [ref=e989]
+                      - generic [ref=e1239]:
+                        - generic [ref=e1240]:
+                          - img
+                        - generic [ref=e1241]: Failed setup, will retry
+                    - generic [ref=e993]:
+                      - img
+                - link "13 devices" [ref=e996] [cursor=pointer]:
+                  - /url: /config/devices/dashboard?historyBack=1&domain=shelly
+                  - generic [ref=e997]: 13 devices
+            - generic [ref=e999]:
+              - generic:
+                - link "SmartThings" [ref=e1000] [cursor=pointer]:
+                  - /url: /config/integrations/integration/smartthings
+                  - generic [ref=e1001]:
+                    - heading "SmartThings" [level=1] [ref=e1003]
+                    - generic [ref=e1004]:
+                      - img
+                - generic [ref=e1005]:
+                  - link "1 device" [ref=e1007] [cursor=pointer]:
+                    - /url: /config/devices/device/42af23e15f321fb499cceead6d76c9fb
+                    - generic [ref=e1008]: 1 device
+                  - generic [ref=e1011]:
+                    - img
+            - generic [ref=e1013]:
+              - generic:
+                - link "Spook" [ref=e1014] [cursor=pointer]:
+                  - /url: /config/integrations/integration/spook
+                  - generic [ref=e1015]:
+                    - heading "Spook" [level=1] [ref=e1017]
+                    - generic [ref=e1018]:
+                      - img
+                - generic [ref=e1019]:
+                  - link "3 devices" [ref=e1021] [cursor=pointer]:
+                    - /url: /config/devices/dashboard?historyBack=1&domain=spook
+                    - generic [ref=e1022]: 3 devices
+                  - generic [ref=e1025]:
+                    - img
+            - generic [ref=e1027]:
+              - generic:
+                - link "SQL" [ref=e1028] [cursor=pointer]:
+                  - /url: /config/integrations/integration/sql
+                  - generic [ref=e1029]:
+                    - heading "SQL" [level=1] [ref=e1031]
+                    - generic [ref=e1032]:
+                      - img
+                - link "22 services" [ref=e1035] [cursor=pointer]:
+                  - /url: /config/devices/dashboard?historyBack=1&domain=sql
+                  - generic [ref=e1036]: 22 services
+            - generic [ref=e1038]:
+              - generic:
+                - link "Sun" [ref=e1039] [cursor=pointer]:
+                  - /url: /config/integrations/integration/sun
+                  - generic [ref=e1040]:
+                    - heading "Sun" [level=1] [ref=e1042]
+                    - generic [ref=e1043]:
+                      - img
+                - link "1 service" [ref=e1046] [cursor=pointer]:
+                  - /url: /config/devices/device/373397061cbb5e819d2d841fdedc00b5
+                  - generic [ref=e1047]: 1 service
+            - generic [ref=e1049]:
+              - generic:
+                - link "Switch Manager" [ref=e1050] [cursor=pointer]:
+                  - /url: /config/integrations/integration/switch_manager
+                  - generic [ref=e1051]:
+                    - heading "Switch Manager" [level=1] [ref=e1053]
+                    - generic [ref=e1054]:
+                      - img
+                - generic [ref=e1055]:
+                  - link "1 entry" [ref=e1057] [cursor=pointer]:
+                    - /url: /config/integrations/integration/switch_manager
+                    - generic [ref=e1058]: 1 entry
+                  - generic [ref=e1061]:
+                    - img
+            - generic [ref=e1063]:
+              - generic:
+                - link "System Monitor" [ref=e1064] [cursor=pointer]:
+                  - /url: /config/integrations/integration/systemmonitor
+                  - generic [ref=e1065]:
+                    - heading "System Monitor" [level=1] [ref=e1067]
+                    - generic [ref=e1068]:
+                      - img
+                - link "1 service" [ref=e1071] [cursor=pointer]:
+                  - /url: /config/devices/device/8796bbc47a5110348ccc214a8f637bb9
+                  - generic [ref=e1072]: 1 service
+            - generic [ref=e1074]:
+              - generic:
+                - link "Telegram bot" [ref=e1075] [cursor=pointer]:
+                  - /url: /config/integrations/integration/telegram_bot
+                  - generic [ref=e1076]:
+                    - heading "Telegram bot" [level=1] [ref=e1078]
+                    - generic [ref=e1079]:
+                      - img
+                - generic [ref=e1080]:
+                  - link "1 service" [ref=e1082] [cursor=pointer]:
+                    - /url: /config/devices/device/917be7a415fbf4c6b1d46d5e49d603ca
+                    - generic [ref=e1083]: 1 service
+                  - generic [ref=e1086]:
+                    - img
+            - generic [ref=e1088]:
+              - generic:
+                - link "Thermal Comfort" [ref=e1089] [cursor=pointer]:
+                  - /url: /config/integrations/integration/thermal_comfort
+                  - generic [ref=e1090]:
+                    - heading "Thermal Comfort" [level=1] [ref=e1092]
+                    - generic [ref=e1093]:
+                      - img
+                - generic [ref=e1094]:
+                  - link "3 devices" [ref=e1096] [cursor=pointer]:
+                    - /url: /config/devices/dashboard?historyBack=1&domain=thermal_comfort
+                    - generic [ref=e1097]: 3 devices
+                  - generic [ref=e1100]:
+                    - img
+            - generic [ref=e1102]:
+              - generic:
+                - link "Time & Date" [ref=e1103] [cursor=pointer]:
+                  - /url: /config/integrations/integration/time_date
+                  - generic [ref=e1104]:
+                    - heading "Time & Date" [level=1] [ref=e1106]
+                    - generic [ref=e1107]:
+                      - img
+                - link "2 entities" [ref=e1110] [cursor=pointer]:
+                  - /url: /config/entities?historyBack=1&domain=time_date
+                  - generic [ref=e1111]: 2 entities
+            - generic [ref=e1113]:
+              - generic:
+                - link "TP-Link Deco" [ref=e1114] [cursor=pointer]:
+                  - /url: /config/integrations/integration/tplink_deco
+                  - generic [ref=e1115]:
+                    - heading "TP-Link Deco" [level=1] [ref=e1117]
+                    - generic [ref=e1118]:
+                      - img
+                - generic [ref=e1119]:
+                  - link "25 devices" [ref=e1121] [cursor=pointer]:
+                    - /url: /config/devices/dashboard?historyBack=1&domain=tplink_deco
+                    - generic [ref=e1122]: 25 devices
+                  - generic [ref=e1125]:
+                    - img
+            - generic [ref=e1127]:
+              - generic:
+                - link "Traccar Server" [ref=e1128] [cursor=pointer]:
+                  - /url: /config/integrations/integration/traccar_server
+                  - generic [ref=e1129]:
+                    - heading "Traccar Server" [level=1] [ref=e1131]
+                    - generic [ref=e1132]:
+                      - img
+                - link "1 device" [ref=e1135] [cursor=pointer]:
+                  - /url: /config/devices/device/bda2ae3a4d9a2eaa1929a3bab35f456c
+                  - generic [ref=e1136]: 1 device
+            - generic [ref=e1138]:
+              - generic:
+                - link "Tuya" [ref=e1139] [cursor=pointer]:
+                  - /url: /config/integrations/integration/tuya
+                  - generic [ref=e1140]:
+                    - heading "Tuya" [level=1] [ref=e1142]
+                    - generic [ref=e1143]:
+                      - img
+                - generic [ref=e1144]:
+                  - link "2 devices" [ref=e1146] [cursor=pointer]:
+                    - /url: /config/devices/dashboard?historyBack=1&domain=tuya
+                    - generic [ref=e1147]: 2 devices
+                  - generic [ref=e1150]:
+                    - img
+            - generic [ref=e1152]:
+              - generic:
+                - link "Tuya Local Initialising" [ref=e1242] [cursor=pointer]:
+                  - /url: /config/integrations/integration/tuya_local
+                  - generic [ref=e1154]:
+                    - generic [ref=e1155]:
+                      - heading "Tuya Local" [level=1] [ref=e1156]
+                      - generic [ref=e1243]:
+                        - generic [ref=e1244]:
+                          - img
+                        - generic [ref=e1245]: Initialising
+                    - generic [ref=e1160]:
+                      - img
+                - generic [ref=e1161]:
+                  - link "1 device" [ref=e1163] [cursor=pointer]:
+                    - /url: /config/devices/device/d3f599df5786560e724dadc99e24f464
+                    - generic [ref=e1164]: 1 device
+                  - generic [ref=e1167]:
+                    - img
+            - generic [ref=e1169]:
+              - generic:
+                - link "Uptime" [ref=e1170] [cursor=pointer]:
+                  - /url: /config/integrations/integration/uptime
+                  - generic [ref=e1171]:
+                    - heading "Uptime" [level=1] [ref=e1173]
+                    - generic [ref=e1174]:
+                      - img
+                - link "1 service" [ref=e1177] [cursor=pointer]:
+                  - /url: /config/devices/device/1d9dda30c0ab70b70fbb75afe1d99829
+                  - generic [ref=e1178]: 1 service
+            - generic [ref=e1180]:
+              - generic:
+                - link "Version" [ref=e1181] [cursor=pointer]:
+                  - /url: /config/integrations/integration/version
+                  - generic [ref=e1182]:
+                    - heading "Version" [level=1] [ref=e1184]
+                    - generic [ref=e1185]:
+                      - img
+                - link "1 service" [ref=e1188] [cursor=pointer]:
+                  - /url: /config/devices/device/feb78ada4118f87b8bf2d87094fd78a6
+                  - generic [ref=e1189]: 1 service
+            - generic [ref=e1191]:
+              - generic:
+                - link "Volumio" [ref=e1192] [cursor=pointer]:
+                  - /url: /config/integrations/integration/volumio
+                  - generic [ref=e1193]:
+                    - heading "Volumio" [level=1] [ref=e1195]
+                    - generic [ref=e1196]:
+                      - img
+                - link "2 devices" [ref=e1199] [cursor=pointer]:
+                  - /url: /config/devices/dashboard?historyBack=1&domain=volumio
+                  - generic [ref=e1200]: 2 devices
+            - generic [ref=e1202]:
+              - generic:
+                - link "WLED" [ref=e1203] [cursor=pointer]:
+                  - /url: /config/integrations/integration/wled
+                  - generic [ref=e1204]:
+                    - heading "WLED" [level=1] [ref=e1206]
+                    - generic [ref=e1207]:
+                      - img
+                - link "2 devices" [ref=e1210] [cursor=pointer]:
+                  - /url: /config/devices/dashboard?historyBack=1&domain=wled
+                  - generic [ref=e1211]: 2 devices
+            - generic [ref=e1213]:
+              - generic:
+                - link "Xiaomi BLE" [ref=e1214] [cursor=pointer]:
+                  - /url: /config/integrations/integration/xiaomi_ble
+                  - generic [ref=e1215]:
+                    - heading "Xiaomi BLE" [level=1] [ref=e1217]
+                    - generic [ref=e1218]:
+                      - img
+                - link "1 device" [ref=e1221] [cursor=pointer]:
+                  - /url: /config/devices/device/52652dd99f64913e6f6bd0eab0eb84b3
+                  - generic [ref=e1222]: 1 device
+      - button "Add integration" [ref=e1226] [cursor=pointer]:
+        - generic [ref=e1228]:
+          - img
+        - generic [ref=e1229]: Add integration
+  - generic:
+    - generic:
+      - generic "Set up a new integration":
+        - dialog [ref=e1246]:
+          - generic [ref=e1247]:
+            - generic:
+              - banner [ref=e1250]:
+                - generic [ref=e1251]:
+                  - generic "Close" [ref=e1255]:
+                    - button "Close" [ref=e1256] [cursor=pointer]:
+                      - generic [ref=e1258]:
+                        - img
+                  - generic [ref=e1261]: Set up a new integration
+              - generic [ref=e1263]:
+                - generic:
+                  - generic [ref=e1266]:
+                    - generic [ref=e1269]:
+                      - img
+                    - textbox [ref=e1270]:
+                      - /placeholder: Search for a brand name
+                  - list [ref=e1272]:
+                    - generic [ref=e1273]:
+                      - generic [ref=e1274] [cursor=pointer]:
+                        - generic [ref=e1276]: 1-Wire
+                        - generic [ref=e1278]:
+                          - img
+                      - generic [ref=e1279] [cursor=pointer]:
+                        - generic [ref=e1281]: 3 Day Blinds
+                        - generic [ref=e1283]:
+                          - img
+                      - generic [ref=e1284] [cursor=pointer]:
+                        - generic [ref=e1286]: 17TRACK
+                        - generic [ref=e1287]:
+                          - generic [ref=e1288]:
+                            - img
+                          - generic [ref=e1289]:
+                            - img
+                      - generic [ref=e1290] [cursor=pointer]:
+                        - generic [ref=e1292]: A. O. Smith
+                        - generic [ref=e1293]:
+                          - generic [ref=e1294]:
+                            - img
+                          - generic [ref=e1295]:
+                            - img
+                      - generic [ref=e1296] [cursor=pointer]:
+                        - generic [ref=e1298]: Abode
+                        - generic [ref=e1299]:
+                          - generic [ref=e1300]:
+                            - img
+                          - generic [ref=e1301]:
+                            - img
+                      - generic [ref=e1302] [cursor=pointer]:
+                        - generic [ref=e1304]: Acaia
+                        - generic [ref=e1306]:
+                          - img
+                      - generic [ref=e1307] [cursor=pointer]:
+                        - generic [ref=e1309]: AccuWeather
+                        - generic [ref=e1310]:
+                          - generic [ref=e1311]:
+                            - img
+                          - generic [ref=e1312]:
+                            - img
+                      - generic [ref=e1313] [cursor=pointer]:
+                        - generic [ref=e1315]: Acomax
+                        - generic [ref=e1317]:
+                          - img
+                      - generic [ref=e1318] [cursor=pointer]:
+                        - generic [ref=e1320]: Actron Air
+                        - generic [ref=e1321]:
+                          - generic [ref=e1322]:
+                            - img
+                          - generic [ref=e1323]:
+                            - img
+                      - generic [ref=e1324] [cursor=pointer]:
+                        - generic [ref=e1326]: Adax
+                        - generic [ref=e1328]:
+                          - img
+                      - generic [ref=e1329] [cursor=pointer]:
+                        - generic [ref=e1331]: AdGuard Home
+                        - generic [ref=e1333]:
+                          - img
+                      - generic [ref=e1334] [cursor=pointer]:
+                        - generic [ref=e1336]: Advantage Air
+                        - generic [ref=e1338]:
+                          - img
+                      - generic [ref=e1339] [cursor=pointer]:
+                        - generic [ref=e1341]: AEMET OpenData
+                        - generic [ref=e1342]:
+                          - generic [ref=e1343]:
+                            - img
+                          - generic [ref=e1344]:
+                            - img
+                      - generic [ref=e1345] [cursor=pointer]:
+                        - generic [ref=e1347]: AEP Ohio
+                        - generic [ref=e1348]:
+                          - generic [ref=e1349]:
+                            - img
+                          - generic [ref=e1350]:
+                            - img
+                      - generic [ref=e1351] [cursor=pointer]:
+                        - generic [ref=e1353]: AEP Texas
+                        - generic [ref=e1354]:
+                          - generic [ref=e1355]:
+                            - img
+                          - generic [ref=e1356]:
+                            - img
+                      - generic [ref=e1357] [cursor=pointer]:
+                        - generic [ref=e1359]: AfterShip
+                        - generic [ref=e1360]:
+                          - generic [ref=e1361]:
+                            - img
+                          - generic [ref=e1362]:
+                            - img
+                      - generic [ref=e1363] [cursor=pointer]:
+                        - generic [ref=e1365]: Afvalinfo
+                        - generic [ref=e1366]:
+                          - generic [ref=e1367]:
+                            - img
+                          - generic [ref=e1369]:
+                            - img
+                          - generic [ref=e1370]:
+                            - img
+                      - generic [ref=e1371] [cursor=pointer]:
+                        - generic [ref=e1373]: Agent DVR
+                        - generic [ref=e1375]:
+                          - img
+                      - generic [ref=e1376] [cursor=pointer]:
+                        - generic [ref=e1378]: air-Q
+                        - generic [ref=e1380]:
+                          - img
+                      - generic [ref=e1381] [cursor=pointer]:
+                        - generic [ref=e1383]: AirGradient
+                        - generic [ref=e1385]:
+                          - img
+                      - generic [ref=e1386] [cursor=pointer]:
+                        - generic [ref=e1388]: Airly
+                        - generic [ref=e1389]:
+                          - generic [ref=e1390]:
+                            - img
+                          - generic [ref=e1391]:
+                            - img
+                      - generic [ref=e1392] [cursor=pointer]:
+                        - generic [ref=e1394]: AirNow
+                        - generic [ref=e1395]:
+                          - generic [ref=e1396]:
+                            - img
+                          - generic [ref=e1397]:
+                            - img
+                      - generic [ref=e1398] [cursor=pointer]:
+                        - generic [ref=e1400]: Airobot
+                        - generic [ref=e1402]:
+                          - img
+          - contentinfo

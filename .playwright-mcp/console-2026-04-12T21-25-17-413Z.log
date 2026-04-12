@@ -1,0 +1,17 @@
+[     115ms] [INFO] %c NEERSLAG-CARD %c 2024.05.05.0 Color: white; font-weight: bold; background: red;  @ https://ha.madebysteven.nl/neerslag-card.js:99
+[     915ms] Transition was skipped
+[     925ms] [ERROR] Failure writing unhandled promise rejection to system log: Error: Cannot parse given Error object
+    at Object.parse (https://ha.madebysteven.nl/frontend_latest/44456.ae8305aa7deaa159.js:1:478)
+    at https://ha.madebysteven.nl/frontend_latest/44456.ae8305aa7deaa159.js:1:27684
+    at new Promise (<anonymous>)
+    at fromError (https://ha.madebysteven.nl/frontend_latest/44456.ae8305aa7deaa159.js:1:27650)
+    at c (https://ha.madebysteven.nl/frontend_latest/29090.ac89660fba9de52e.js:1:998)
+    at https://ha.madebysteven.nl/frontend_latest/app.ed71fe63a78d2afa.js:61:18667 @ https://ha.madebysteven.nl/frontend_latest/app.ed71fe63a78d2afa.js:60
+[   38107ms] [ERROR] WebSocket connection to 'wss://ha.madebysteven.nl/api/websocket' failed: Error during WebSocket handshake: Unexpected response code: 502 @ https://ha.madebysteven.nl/frontend_latest/core.ff3c881b4abc9af3.js:0
+[   39166ms] [ERROR] WebSocket connection to 'wss://ha.madebysteven.nl/api/websocket' failed: Error during WebSocket handshake: Unexpected response code: 502 @ https://ha.madebysteven.nl/frontend_latest/core.ff3c881b4abc9af3.js:0
+[   41340ms] [ERROR] WebSocket connection to 'wss://ha.madebysteven.nl/api/websocket' failed: Error during WebSocket handshake: Unexpected response code: 502 @ https://ha.madebysteven.nl/frontend_latest/core.ff3c881b4abc9af3.js:0
+[   44444ms] [ERROR] WebSocket connection to 'wss://ha.madebysteven.nl/api/websocket' failed: Error during WebSocket handshake: Unexpected response code: 502 @ https://ha.madebysteven.nl/frontend_latest/core.ff3c881b4abc9af3.js:0
+[   48608ms] [ERROR] WebSocket connection to 'wss://ha.madebysteven.nl/api/websocket' failed: Error during WebSocket handshake: Unexpected response code: 502 @ https://ha.madebysteven.nl/frontend_latest/core.ff3c881b4abc9af3.js:0
+[   53690ms] [ERROR] WebSocket connection to 'wss://ha.madebysteven.nl/api/websocket' failed: Error during WebSocket handshake: Unexpected response code: 502 @ https://ha.madebysteven.nl/frontend_latest/core.ff3c881b4abc9af3.js:0
+[   58780ms] [ERROR] WebSocket connection to 'wss://ha.madebysteven.nl/api/websocket' failed: Error during WebSocket handshake: Unexpected response code: 502 @ https://ha.madebysteven.nl/frontend_latest/core.ff3c881b4abc9af3.js:0
+[   64306ms] Object

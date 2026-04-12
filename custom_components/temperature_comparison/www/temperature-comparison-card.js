@@ -1,3 +1,6 @@
+// Wait for ha-panel-lovelace to be defined before accessing LitElement
+(async () => {
+await customElements.whenDefined("ha-panel-lovelace");
 const LitElement = Object.getPrototypeOf(
   customElements.get("ha-panel-lovelace")
 );
@@ -455,7 +458,9 @@ class TemperatureComparisonCard extends LitElement {
   }
 }
 
-customElements.define("temperature-comparison-card", TemperatureComparisonCard);
+if (!customElements.get("temperature-comparison-card")) {
+  customElements.define("temperature-comparison-card", TemperatureComparisonCard);
+}
 
 window.customCards = window.customCards || [];
 window.customCards.push({
@@ -464,3 +469,5 @@ window.customCards.push({
   description: "Compare indoor/outdoor temperatures year-over-year with weather correction",
   preview: true,
 });
+
+})();
