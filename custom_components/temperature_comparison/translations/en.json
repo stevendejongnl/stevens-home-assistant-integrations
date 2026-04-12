@@ -1,0 +1,43 @@
+{
+    "config": {
+        "step": {
+            "user": {
+                "title": "Temperature Comparison",
+                "description": "Select the indoor and outdoor temperature sensors to compare year-over-year.",
+                "data": {
+                    "inside_temperature_entity": "Inside temperature sensor",
+                    "outside_temperature_entity": "Outside temperature sensor",
+                    "name": "Name"
+                },
+                "data_description": {
+                    "inside_temperature_entity": "The sensor measuring your indoor temperature",
+                    "outside_temperature_entity": "The sensor measuring the outdoor temperature"
+                }
+            }
+        },
+        "error": {
+            "same_entity": "Inside and outside entities must be different",
+            "entity_not_found": "One or more selected entities could not be found"
+        },
+        "abort": {
+            "already_configured": "This entity combination is already configured"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "title": "Temperature Comparison Options",
+                "data": {
+                    "history_days": "Rolling average period (days)",
+                    "weight_outdoor_correction": "Outdoor correction weight",
+                    "update_interval": "Update interval (seconds)"
+                },
+                "data_description": {
+                    "history_days": "Number of days to average for the comparison",
+                    "weight_outdoor_correction": "How much outdoor temperature change affects the corrected difference (0 = ignore, 1 = full weight)",
+                    "update_interval": "How often to recompute the statistics"
+                }
+            }
+        }
+    }
+}

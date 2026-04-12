@@ -1,0 +1,15 @@
+"""Constants for the Temperature Comparison integration."""
+
+DOMAIN = "temperature_comparison"
+
+CONF_INSIDE_ENTITY = "inside_temperature_entity"
+CONF_OUTSIDE_ENTITY = "outside_temperature_entity"
+CONF_NAME = "name"
+CONF_WEIGHT_OUTDOOR = "weight_outdoor_correction"
+CONF_HISTORY_DAYS = "history_days"
+CONF_UPDATE_INTERVAL = "update_interval"
+
+DEFAULT_NAME = "Temperature Comparison"
+DEFAULT_WEIGHT_OUTDOOR = 0.5
+DEFAULT_HISTORY_DAYS = 7
+DEFAULT_UPDATE_INTERVAL = 1800  # 30 minutes
