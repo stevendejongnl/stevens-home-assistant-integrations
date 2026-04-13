@@ -1,3 +1,6 @@
+// Wait for ha-panel-lovelace to be defined before accessing LitElement
+(async () => {
+await customElements.whenDefined("ha-panel-lovelace");
 const LitElement = Object.getPrototypeOf(
   customElements.get("ha-panel-lovelace")
 );
@@ -438,7 +441,9 @@ class DWMPTrackingCard extends LitElement {
   }
 }
 
-customElements.define("dwmp-tracking-card", DWMPTrackingCard);
+if (!customElements.get("dwmp-tracking-card")) {
+  customElements.define("dwmp-tracking-card", DWMPTrackingCard);
+}
 
 window.customCards = window.customCards || [];
 window.customCards.push({
@@ -447,3 +452,5 @@ window.customCards.push({
   description: "Track your packages from PostNL, DHL, DPD, and Amazon",
   preview: true,
 });
+
+})();
