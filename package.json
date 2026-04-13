@@ -1,0 +1,22 @@
+{
+  "name": "stevens-home-assistant-integrations",
+  "version": "0.0.0-managed-by-semantic-release",
+  "private": true,
+  "description": "Tooling-only package.json — semantic-release pulls its devDependencies from here. The HACS integrations themselves are Python.",
+  "scripts": {
+    "release": "semantic-release",
+    "release:dwmp": "cd custom_components/dwmp && semantic-release -e semantic-release-monorepo",
+    "release:temperature_comparison": "cd custom_components/temperature_comparison && semantic-release -e semantic-release-monorepo"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^13.0.0",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.0",
+    "@semantic-release/release-notes-generator": "^14.0.0",
+    "conventional-changelog-conventionalcommits": "^8.0.0",
+    "semantic-release": "^24.1.0",
+    "semantic-release-monorepo": "^8.0.2"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "dwmp",
+  "version": "0.0.0-managed-by-semantic-release",
+  "private": true,
+  "description": "semantic-release-monorepo reads `name` from this file to scope tags as `dwmp-v<version>`. The integration itself is Python — see manifest.json for the version users see in HACS."
+}

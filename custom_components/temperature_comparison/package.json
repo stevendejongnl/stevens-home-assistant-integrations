@@ -1,0 +1,6 @@
+{
+  "name": "temperature_comparison",
+  "version": "0.0.0-managed-by-semantic-release",
+  "private": true,
+  "description": "semantic-release-monorepo reads `name` from this file to scope tags as `temperature_comparison-v<version>`. The integration itself is Python — see manifest.json for the version users see in HACS."
+}

@@ -1,5 +1,8 @@
 .playwright-mcp/
-*.jpg
-*.jpeg
-*.png
 __pycache__/
+node_modules/
+
+# Local-only screenshots / dev captures (committed integration assets like
+# custom_components/*/icon.png are tracked explicitly and unaffected).
+/stats-*.jpg
+/stats-*.png
