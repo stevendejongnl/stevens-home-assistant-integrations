@@ -13,6 +13,7 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+from homeassistant.loader import async_get_integration
 
 from .const import (
     CONF_HISTORY_DAYS,
@@ -189,7 +190,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         await hass.http.async_register_static_paths(
             [StaticPathConfig(card_url, card_path, False)]
         )
-        add_extra_js_url(hass, f"{card_url}?v=1.0.2")
+        integration = await async_get_integration(hass, DOMAIN)
+        add_extra_js_url(hass, f"{card_url}?v={integration.version}")
         hass.data[card_key] = True
 
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)

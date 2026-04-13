@@ -7,12 +7,15 @@ from datetime import timedelta
 import logging
 from pathlib import Path
 
+from homeassistant.components.frontend import add_extra_js_url
+from homeassistant.components.http import StaticPathConfig
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import Platform
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import ConfigEntryAuthFailed
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from homeassistant.loader import async_get_integration
 
 from .api_client import DWMPApiClient, DWMPApiError, DWMPAuthError, DWMPConnectionError
 from .const import ACTIVE_STATUSES, CONF_TOKEN, CONF_URL, DEFAULT_SCAN_INTERVAL, DOMAIN
@@ -110,30 +113,20 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     hass.data.setdefault(DOMAIN, {})
     hass.data[DOMAIN][entry.entry_id] = coordinator
 
-    # Auto-register the Lovelace card (once per HA session)
-    if f"{DOMAIN}_card_registered" not in hass.data:
+    # Register Lovelace card
+    card_key = f"{DOMAIN}_card_registered"
+    if card_key not in hass.data:
         card_url = f"/{DOMAIN}/dwmp-tracking-card.js"
-        card_path = Path(__file__).parent / "www" / "dwmp-tracking-card.js"
-        hass.http.register_static_path(card_url, str(card_path), cache_headers=True)
-
-        # Register as Lovelace resource if not already present
-        await _register_card_resource(hass, card_url)
-        hass.data[f"{DOMAIN}_card_registered"] = True
+        card_path = str(Path(__file__).parent / "www" / "dwmp-tracking-card.js")
+        await hass.http.async_register_static_paths(
+            [StaticPathConfig(card_url, card_path, False)]
+        )
+        integration = await async_get_integration(hass, DOMAIN)
+        add_extra_js_url(hass, f"{card_url}?v={integration.version}")
+        hass.data[card_key] = True
 
     await hass.config_entries.async_forward_entry_setups(entry, PLATFORMS)
     return True
-
-
-async def _register_card_resource(hass: HomeAssistant, url: str) -> None:
-    """Register the card JS as a Lovelace resource if not already registered."""
-    try:
-        resources = await hass.data["lovelace"]["resources"].async_get_info()
-        if not any(r["url"] == url for r in resources):
-            await hass.data["lovelace"]["resources"].async_create_item(
-                {"url": url, "res_type": "module"}
-            )
-    except Exception:
-        _LOGGER.debug("Could not auto-register Lovelace resource, add manually: %s", url)
 
 
 async def async_unload_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
