@@ -8,7 +8,10 @@ Custom Home Assistant integrations for personal home automation projects.
 
 Track your packages from PostNL, DHL, DPD, GLS, and Amazon directly in Home Assistant.
 
-**Requires:** A running [Dude, Where's My Package?](https://github.com/stevendejongnl/dude-wheres-my-package) instance with password authentication enabled.
+**Requires** a running [Dude, Where's My Package?](https://github.com/stevendejongnl/dude-wheres-my-package) instance with password authentication enabled. Easiest path: install the
+[**HA addon**](https://github.com/stevendejongnl/madebysteven-ha-addons) — it wraps the upstream image,
+adds a sidebar tile via HA ingress, and persists the database to the addon's `/data` volume. Once
+running, point this integration at `http://local-dwmp:8000` with the addon's password.
 
 #### Sensor
 
