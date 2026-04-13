@@ -48,6 +48,7 @@ class DWMPTrackingCard extends LitElement {
       postnl: { bg: "rgba(255, 107, 0, 0.13)", text: "#ff8a50" },
       dhl: { bg: "rgba(255, 204, 0, 0.13)", text: "#ffd93d" },
       dpd: { bg: "rgba(220, 20, 60, 0.13)", text: "#ff6b81" },
+      gls: { bg: "rgba(0, 48, 160, 0.13)", text: "#5b8bff" },
       amazon: { bg: "rgba(255, 153, 0, 0.13)", text: "#ffad42" },
     };
     return colors[carrier] || { bg: "rgba(99, 110, 114, 0.13)", text: "#8b8fa3" };

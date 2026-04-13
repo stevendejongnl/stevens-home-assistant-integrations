@@ -6,7 +6,7 @@ Custom Home Assistant integrations for personal home automation projects.
 
 ### Dude, Where's My Package? (DWMP)
 
-Track your packages from PostNL, DHL, DPD, and Amazon directly in Home Assistant.
+Track your packages from PostNL, DHL, DPD, GLS, and Amazon directly in Home Assistant.
 
 **Requires:** A running [Dude, Where's My Package?](https://github.com/stevendejongnl/dude-wheres-my-package) instance with password authentication enabled.
 
@@ -23,7 +23,7 @@ Track your packages from PostNL, DHL, DPD, and Amazon directly in Home Assistant
 
 #### Lovelace Card
 
-Bundled custom card with carrier badges (PostNL, DHL, DPD, Amazon), status colors, and expandable event timeline. Automatically registered as a Lovelace resource on setup.
+Bundled custom card with carrier badges (PostNL, DHL, DPD, GLS, Amazon), status colors, and expandable event timeline. Automatically registered as a Lovelace resource on setup.
 
 ```yaml
 type: custom:dwmp-tracking-card
