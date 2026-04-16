@@ -16,17 +16,35 @@ from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
 from homeassistant.loader import async_get_integration
 
 from .const import (
+    CONF_DATA_SOURCE,
     CONF_HISTORY_DAYS,
+    CONF_INFLUXDB_BUCKET,
+    CONF_INFLUXDB_HOST,
+    CONF_INFLUXDB_ORG,
+    CONF_INFLUXDB_PORT,
+    CONF_INFLUXDB_TOKEN,
     CONF_INSIDE_ENTITY,
     CONF_OUTSIDE_ENTITY,
     CONF_UPDATE_INTERVAL,
     CONF_WEIGHT_OUTDOOR,
+    DATA_SOURCE_INFLUXDB,
+    DATA_SOURCE_RECORDER,
     DEFAULT_HISTORY_DAYS,
     DEFAULT_UPDATE_INTERVAL,
     DEFAULT_WEIGHT_OUTDOOR,
     DOMAIN,
 )
-from .statistics_client import get_daily_means, get_last_year_average, get_period_average
+from .influxdb_client import (
+    InfluxDBClient,
+    get_daily_means_influxdb,
+    get_last_year_average_influxdb,
+    get_period_average_influxdb,
+)
+from .statistics_client import (
+    get_daily_means,
+    get_last_year_average,
+    get_period_average,
+)
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -66,6 +84,8 @@ class TemperatureComparisonCoordinator(DataUpdateCoordinator[TemperatureComparis
         history_days: int,
         weight_outdoor: float,
         update_interval: int,
+        data_source: str = DATA_SOURCE_RECORDER,
+        influxdb_client: InfluxDBClient | None = None,
     ) -> None:
         super().__init__(
             hass,
@@ -77,6 +97,8 @@ class TemperatureComparisonCoordinator(DataUpdateCoordinator[TemperatureComparis
         self.outside_entity = outside_entity
         self.history_days = history_days
         self.weight_outdoor = weight_outdoor
+        self.data_source = data_source
+        self.influxdb_client = influxdb_client
 
     async def _async_update_data(self) -> TemperatureComparisonData:
         inside_current = self._get_entity_value(self.inside_entity)
@@ -97,28 +119,52 @@ class TemperatureComparisonCoordinator(DataUpdateCoordinator[TemperatureComparis
         outside_daily: list[dict] = []
 
         try:
-            inside_avg = await get_period_average(
-                self.hass, self.inside_entity, period_start, now
-            )
-            outside_avg = await get_period_average(
-                self.hass, self.outside_entity, period_start, now
-            )
+            if self.data_source == DATA_SOURCE_INFLUXDB and self.influxdb_client:
+                inside_avg = await get_period_average_influxdb(
+                    self.influxdb_client, self.inside_entity, period_start, now
+                )
+                outside_avg = await get_period_average_influxdb(
+                    self.influxdb_client, self.outside_entity, period_start, now
+                )
 
-            inside_ly, in_ly_start, in_ly_end = await get_last_year_average(
-                self.hass, self.inside_entity, self.history_days
-            )
-            outside_ly, out_ly_start, out_ly_end = await get_last_year_average(
-                self.hass, self.outside_entity, self.history_days
-            )
+                inside_ly, in_ly_start, in_ly_end = await get_last_year_average_influxdb(
+                    self.influxdb_client, self.inside_entity, self.history_days
+                )
+                outside_ly, out_ly_start, out_ly_end = await get_last_year_average_influxdb(
+                    self.influxdb_client, self.outside_entity, self.history_days
+                )
 
-            # Sparkline data (last 14 days)
-            sparkline_start = now - timedelta(days=14)
-            inside_daily = await get_daily_means(
-                self.hass, self.inside_entity, sparkline_start, now
-            )
-            outside_daily = await get_daily_means(
-                self.hass, self.outside_entity, sparkline_start, now
-            )
+                # Sparkline data (last 14 days)
+                sparkline_start = now - timedelta(days=14)
+                inside_daily = await get_daily_means_influxdb(
+                    self.influxdb_client, self.inside_entity, sparkline_start, now
+                )
+                outside_daily = await get_daily_means_influxdb(
+                    self.influxdb_client, self.outside_entity, sparkline_start, now
+                )
+            else:
+                inside_avg = await get_period_average(
+                    self.hass, self.inside_entity, period_start, now
+                )
+                outside_avg = await get_period_average(
+                    self.hass, self.outside_entity, period_start, now
+                )
+
+                inside_ly, in_ly_start, in_ly_end = await get_last_year_average(
+                    self.hass, self.inside_entity, self.history_days
+                )
+                outside_ly, out_ly_start, out_ly_end = await get_last_year_average(
+                    self.hass, self.outside_entity, self.history_days
+                )
+
+                # Sparkline data (last 14 days)
+                sparkline_start = now - timedelta(days=14)
+                inside_daily = await get_daily_means(
+                    self.hass, self.inside_entity, sparkline_start, now
+                )
+                outside_daily = await get_daily_means(
+                    self.hass, self.outside_entity, sparkline_start, now
+                )
         except Exception:
             _LOGGER.warning("Failed to fetch statistics, using current values only", exc_info=True)
 
@@ -173,9 +219,38 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     history_days = entry.options.get(CONF_HISTORY_DAYS, DEFAULT_HISTORY_DAYS)
     weight_outdoor = entry.options.get(CONF_WEIGHT_OUTDOOR, DEFAULT_WEIGHT_OUTDOOR)
     update_interval = entry.options.get(CONF_UPDATE_INTERVAL, DEFAULT_UPDATE_INTERVAL)
+    data_source = entry.data.get(CONF_DATA_SOURCE, DATA_SOURCE_RECORDER)
+
+    influxdb_client = None
+    if data_source == DATA_SOURCE_INFLUXDB:
+        host = entry.data.get(CONF_INFLUXDB_HOST)
+        port = entry.data.get(CONF_INFLUXDB_PORT)
+        token = entry.data.get(CONF_INFLUXDB_TOKEN)
+        org = entry.data.get(CONF_INFLUXDB_ORG)
+        bucket = entry.data.get(CONF_INFLUXDB_BUCKET)
+
+        if host and token:
+            influxdb_client = InfluxDBClient(
+                host=host,
+                port=port,
+                token=token,
+                org=org,
+                bucket=bucket,
+            )
+            _LOGGER.info("Using InfluxDB at %s:%d for temperature data", host, port)
+        else:
+            _LOGGER.warning("InfluxDB configured but missing host or token, falling back to recorder")
+            data_source = DATA_SOURCE_RECORDER
 
     coordinator = TemperatureComparisonCoordinator(
-        hass, inside_entity, outside_entity, history_days, weight_outdoor, update_interval
+        hass,
+        inside_entity,
+        outside_entity,
+        history_days,
+        weight_outdoor,
+        update_interval,
+        data_source=data_source,
+        influxdb_client=influxdb_client,
     )
     await coordinator.async_config_entry_first_refresh()
 
