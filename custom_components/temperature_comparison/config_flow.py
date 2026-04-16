@@ -22,11 +22,6 @@ from homeassistant.helpers.selector import (
 from .const import (
     CONF_DATA_SOURCE,
     CONF_HISTORY_DAYS,
-    CONF_INFLUXDB_BUCKET,
-    CONF_INFLUXDB_HOST,
-    CONF_INFLUXDB_ORG,
-    CONF_INFLUXDB_PORT,
-    CONF_INFLUXDB_TOKEN,
     CONF_INSIDE_ENTITY,
     CONF_NAME,
     CONF_OUTSIDE_ENTITY,
@@ -36,9 +31,6 @@ from .const import (
     DATA_SOURCE_RECORDER,
     DEFAULT_DATA_SOURCE,
     DEFAULT_HISTORY_DAYS,
-    DEFAULT_INFLUXDB_BUCKET,
-    DEFAULT_INFLUXDB_ORG,
-    DEFAULT_INFLUXDB_PORT,
     DEFAULT_NAME,
     DEFAULT_UPDATE_INTERVAL,
     DEFAULT_WEIGHT_OUTDOOR,
@@ -79,22 +71,15 @@ class TemperatureComparisonConfigFlow(ConfigFlow, domain=DOMAIN):
                     self._abort_if_unique_id_configured()
 
                     name = user_input.get(CONF_NAME, DEFAULT_NAME)
-                    data = {
-                        CONF_INSIDE_ENTITY: inside,
-                        CONF_OUTSIDE_ENTITY: outside,
-                        CONF_NAME: name,
-                        CONF_DATA_SOURCE: user_input.get(CONF_DATA_SOURCE, DEFAULT_DATA_SOURCE),
-                    }
-
-                    # Add InfluxDB config if using InfluxDB
-                    if user_input.get(CONF_DATA_SOURCE) == DATA_SOURCE_INFLUXDB:
-                        data[CONF_INFLUXDB_HOST] = user_input[CONF_INFLUXDB_HOST]
-                        data[CONF_INFLUXDB_PORT] = user_input[CONF_INFLUXDB_PORT]
-                        data[CONF_INFLUXDB_TOKEN] = user_input[CONF_INFLUXDB_TOKEN]
-                        data[CONF_INFLUXDB_ORG] = user_input.get(CONF_INFLUXDB_ORG, DEFAULT_INFLUXDB_ORG)
-                        data[CONF_INFLUXDB_BUCKET] = user_input.get(CONF_INFLUXDB_BUCKET, DEFAULT_INFLUXDB_BUCKET)
-
-                    return self.async_create_entry(title=name, data=data)
+                    return self.async_create_entry(
+                        title=name,
+                        data={
+                            CONF_INSIDE_ENTITY: inside,
+                            CONF_OUTSIDE_ENTITY: outside,
+                            CONF_NAME: name,
+                            CONF_DATA_SOURCE: user_input.get(CONF_DATA_SOURCE, DEFAULT_DATA_SOURCE),
+                        },
+                    )
 
         return self.async_show_form(
             step_id="user",
@@ -118,14 +103,12 @@ class TemperatureComparisonConfigFlow(ConfigFlow, domain=DOMAIN):
                             options=[DATA_SOURCE_RECORDER, DATA_SOURCE_INFLUXDB],
                         )
                     ),
-                    vol.Optional(CONF_INFLUXDB_HOST): str,
-                    vol.Optional(CONF_INFLUXDB_PORT, default=DEFAULT_INFLUXDB_PORT): int,
-                    vol.Optional(CONF_INFLUXDB_TOKEN): str,
-                    vol.Optional(CONF_INFLUXDB_ORG, default=DEFAULT_INFLUXDB_ORG): str,
-                    vol.Optional(CONF_INFLUXDB_BUCKET, default=DEFAULT_INFLUXDB_BUCKET): str,
                 }
             ),
             errors=errors,
+            description_placeholders={
+                "data_source_note": "Select 'influxdb' to use HA's configured InfluxDB integration"
+            },
         )
 
     @staticmethod

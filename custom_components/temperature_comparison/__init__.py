@@ -18,11 +18,6 @@ from homeassistant.loader import async_get_integration
 from .const import (
     CONF_DATA_SOURCE,
     CONF_HISTORY_DAYS,
-    CONF_INFLUXDB_BUCKET,
-    CONF_INFLUXDB_HOST,
-    CONF_INFLUXDB_ORG,
-    CONF_INFLUXDB_PORT,
-    CONF_INFLUXDB_TOKEN,
     CONF_INSIDE_ENTITY,
     CONF_OUTSIDE_ENTITY,
     CONF_UPDATE_INTERVAL,
@@ -223,23 +218,29 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     influxdb_client = None
     if data_source == DATA_SOURCE_INFLUXDB:
-        host = entry.data.get(CONF_INFLUXDB_HOST)
-        port = entry.data.get(CONF_INFLUXDB_PORT)
-        token = entry.data.get(CONF_INFLUXDB_TOKEN)
-        org = entry.data.get(CONF_INFLUXDB_ORG)
-        bucket = entry.data.get(CONF_INFLUXDB_BUCKET)
+        # Get InfluxDB config from HA's influxdb integration
+        influxdb_config = hass.data.get("influxdb", {})
+        if isinstance(influxdb_config, dict):
+            host = influxdb_config.get("host") or influxdb_config.get("url", "").split("://")[-1].split(":")[0]
+            port = influxdb_config.get("port", 8086)
+            token = influxdb_config.get("token")
+            org = influxdb_config.get("org", "home-assistant")
+            bucket = influxdb_config.get("bucket", "homeassistant")
 
-        if host and token:
-            influxdb_client = InfluxDBClient(
-                host=host,
-                port=port,
-                token=token,
-                org=org,
-                bucket=bucket,
-            )
-            _LOGGER.info("Using InfluxDB at %s:%d for temperature data", host, port)
+            if host and token:
+                influxdb_client = InfluxDBClient(
+                    host=host,
+                    port=port,
+                    token=token,
+                    org=org,
+                    bucket=bucket,
+                )
+                _LOGGER.info("Using HA's InfluxDB integration at %s:%d for temperature data", host, port)
+            else:
+                _LOGGER.warning("InfluxDB data source selected but HA's InfluxDB integration not found or not configured, falling back to recorder")
+                data_source = DATA_SOURCE_RECORDER
         else:
-            _LOGGER.warning("InfluxDB configured but missing host or token, falling back to recorder")
+            _LOGGER.warning("InfluxDB data source selected but HA's InfluxDB integration not configured, falling back to recorder")
             data_source = DATA_SOURCE_RECORDER
 
     coordinator = TemperatureComparisonCoordinator(
